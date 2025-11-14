@@ -1,0 +1,42 @@
+.advantages {
+   position: relative;
+   --color: #ffffff;
+   color: var(--color);
+   background-color: #004A5E;
+
+   &__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 70px;
+   }
+
+   &__cell {}
+
+   &__icon {
+      margin-bottom: 20px;
+
+      svg {
+         width: 32px;
+      }
+   }
+
+   &__title {
+      margin-bottom: 11px;
+      font-weight: 700;
+      font-size: 16px;
+   }
+
+   &__text {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 171%;
+      opacity: 0.7;
+   }
+
+   &__contour {
+      position: absolute;
+      bottom: 7px;
+      right: 0;
+      max-width: 25%;
+   }
+}

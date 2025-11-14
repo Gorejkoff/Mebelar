@@ -1,0 +1,11 @@
+<section class="ready-solutions padding-section">
+   <div class="container">
+      @@include('../UI/Header-Grid/Header-Grid.html',{
+      nameSection: 'Готовые решения',
+      title: 'Коллекции офисной мебели'
+      })
+      <div class="grid">
+         @@loop('../UI/Cards/Card-Link/Card-Link.html', 'json/lists/ready-solution.json')
+      </div>
+   </div>
+</section>

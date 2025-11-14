@@ -1,0 +1,18 @@
+<section class="advantages padding-section">
+   <div class="container">
+      @@include('../UI/Header-Grid/Header-Grid.html',{
+      title: 'Наши преимущества',
+      nameSection: 'Наши преимущества',
+      class: 'no-grid'
+      })
+
+      <article class="advantages__grid">
+         @@loop('./Advantages-Cell.html','json/lists/advantages.json')
+      </article>
+
+      <svg class="advantages__contour" width="205" height="329" viewBox="0 0 205 329" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path opacity="0.27" d="M0.5 205.188L204.5 327.878V243.139L75.8562 163.599L204.5 83.5382V0.878418L0.5 122.009L0.5 205.188Z" stroke="white" />
+      </svg>
+
+   </div>
+</section>

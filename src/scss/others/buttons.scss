@@ -1,0 +1,51 @@
+.button-icon {
+   --size: 30px;
+   width: var(--size);
+   min-width: var(--size);
+   height: var(--size);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   background-color: rgba(0, 74, 94, 0.15);
+
+   svg {
+      width: 20px;
+      height: 20px;
+
+      path {
+         fill: #004A5E;
+      }
+   }
+}
+
+// burger
+.button-menu {
+   position: relative;
+   display: none;
+
+   &>:nth-child(1),
+   &>:nth-child(2),
+   &>:nth-child(3) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 15px;
+      height: 2px;
+      background-color: #004A5E;
+      border-radius: 2px;
+   }
+
+   &>:nth-child(1) {
+      transform: translate(-50%, calc(-50% - 4px));
+   }
+
+   &>:nth-child(2) {
+      transform: translate(-50%, -50%);
+   }
+
+   &>:nth-child(3) {
+      transform: translate(-50%, calc(-50% + 4px));
+   }
+
+}

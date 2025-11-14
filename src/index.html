@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   @@include('html/1_head.html',{"title":"Index"})
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/2_header.html',{})
+
+      <div class="main">
+
+         @@include('html/Banner-Fade/Banner-Fade.html',{})
+         @@include('html/About-Us/About-Us.html',{})
+         @@include('html/Banner-Video/Banner-Video.html',{})
+         @@include('html/Ready-Solutions/Ready-Solutions.html',{})
+         @@include('html/Advantages/Advantages.html',{})
+         @@include('html/Portfolio/Portfolio.html',{})
+
+      </div>
+
+      @@include('html/4_footer.html',{})
+
+   </div>
+
+
+   @@include('html/3_scripts.html',{
+   swiper: true,
+   })
+
+
+</body>
+
+</html>

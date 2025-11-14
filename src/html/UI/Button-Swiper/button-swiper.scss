@@ -1,0 +1,25 @@
+.button-swiper__body {
+   display: flex;
+   align-items: center;
+   gap: 6px;
+}
+
+.button-swiper {
+   --size: 40px;
+   --color: #ffffff;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: var(--size);
+   width: var(--size);
+   min-width: var(--size);
+   border: 1px solid var(--color);
+
+   svg {
+      width: calc(var(--size) / 2);
+
+      path {
+         fill: var(--color);
+      }
+   }
+}

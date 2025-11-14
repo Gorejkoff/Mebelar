@@ -1,0 +1,18 @@
+.header-grid {
+   margin-bottom: 50px;
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 20px;
+
+   &__title {
+      grid-column: span 3;
+   }
+
+   &.no-grid {
+      display: block;
+
+      .header-grid__title {
+         margin-top: 26px;
+      }
+   }
+}

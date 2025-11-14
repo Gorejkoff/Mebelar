@@ -1,0 +1,29 @@
+@use '../../../scss/assets/variablesSCSS.scss' as *;
+
+.button {
+   padding: 12px;
+   width: max-content;
+   min-width: 204px;
+   min-height: 50px;
+
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+
+   background-color: var(--button-background, #004A5E);
+   color: var(--button-color, #ffffff);
+
+   font-weight: 500;
+   font-size: 14px;
+   letter-spacing: -0.01em;
+
+   transition: background-color $tr-time;
+
+   svg {
+      path {
+         fill: var(--button-color, #ffffff);
+         transition: fill $tr-time;
+      }
+   }
+}
