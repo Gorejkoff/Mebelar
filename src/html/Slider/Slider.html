@@ -1,0 +1,11 @@
+<section class="swiper-block padding-section">
+   <div class="container">
+      <h2 class="title-block title-block--margin">@@title</h2>
+      <div class="swiper">
+         <div class="swiper-wrapper">
+            @@loop('./Swiper-Slide.html', '@@json')
+         </div>
+      </div>
+      @@include('../UI/Pagination-Swiper/Pagination-Swiper.html',{})
+   </div>
+</section>

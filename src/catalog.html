@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   @@include('html/1_head.html',{"title":"Catalog"})
+   @@include('html/1_head.html',{"title":"Mebelar Catalog"})
 </head>
 
 
@@ -14,7 +14,10 @@
 
       <div class="main">
          <div class="container">
-            @@include('html/UI/Bread-Crumbs/Bread-Crumbs.html',{"list":[{"name": "Главная", "link": "index.html"}, {"name": "Каталог", "link": "catalog.html"}]})
+            @@include('html/UI/Bread-Crumbs/Bread-Crumbs.html',{
+            "list":[{"name": "Главная", "link": "index.html"}, {"name": "Каталог", "link": "catalog.html"}],
+            "border": true
+            })
          </div>
 
          @@include('html/Catalog/Catalog.html',{})
@@ -31,7 +34,7 @@
    @@include('html/Modal/Search.html',{})
 
    @@include('html/3_scripts.html',{
-   swiper: true,
+   swiper: false,
    })
 
 

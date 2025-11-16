@@ -6,20 +6,19 @@
 
 .button-swiper {
    --size: 40px;
-   --color: #ffffff;
    display: flex;
    align-items: center;
    justify-content: center;
    height: var(--size);
    width: var(--size);
    min-width: var(--size);
-   border: 1px solid var(--color);
+   border: 1px solid var(--color, #ffffff);
 
    svg {
       width: calc(var(--size) / 2);
 
       path {
-         fill: var(--color);
+         fill: var(--color, #ffffff);
       }
    }
 }

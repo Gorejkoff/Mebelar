@@ -9,6 +9,7 @@
 @use '../../html/Experience/experience';
 @use '../../html/Mobile-Menu/mobile-menu';
 @use '../../html/Modal/modal';
+@use '../../html/Decor/decor';
 
 @use '../../html/UI/Page-Title/page-title';
 @use '../../html/UI/Button/button';
@@ -22,3 +23,6 @@
 @use '../../html/UI/Cards/Card-News/card-news';
 @use '../../html/UI/Pagination-Page/pagination-page';
 @use '../../html/UI/Filter/filter';
+@use '../../html/Slider/swiper-block';
+@use '../../html/Card-Product/card-product';
+@use '../../html/Card-Product-Info/card-product-info';

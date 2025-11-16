@@ -1,0 +1,82 @@
+@use '../../scss/assets/variablesSCSS.scss' as *;
+
+.card-production {
+   overflow: hidden;
+
+   &__container {}
+
+   &__body {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 20px;
+
+      @media (min-width:992px) {
+         flex-direction: row;
+      }
+   }
+
+   &__content {
+      flex: 1 1 auto;
+   }
+
+   &__content-shell {
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @media (min-width:768px) {
+         gap: 20px;
+      }
+   }
+
+   &__text {
+      display: flex;
+      flex-direction: column;
+      gap: inherit;
+      font-size: 14px;
+      line-height: 143%;
+   }
+
+   &__swiper {
+      --margin: calc((100vw - 100%) /2);
+      margin-right: calc(var(--margin) * -1);
+      width: calc(100vw - var(--margin) - 42.3%);
+   }
+
+   &__swiper-body {
+      position: relative;
+      max-width: calc(100vw - var(--padding-container) * 2);
+
+      .swiper {
+         overflow: hidden;
+      }
+   }
+
+   &__image {
+      position: relative;
+      padding-bottom: 71.5%;
+      overflow: hidden;
+
+      img {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__swiper-buttons {
+      padding: 10px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background-color: #ffffff;
+      --color: #000000;
+   }
+}

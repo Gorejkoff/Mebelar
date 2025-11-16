@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   @@include('html/1_head.html',{"title":"Mebelar Card"})
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/2_header.html',{})
+
+      <div class="main">
+
+         @@include('html/Card-Product/Card-Product.html',{})
+         @@include('html/Card-Product-Info/Card-Product-Info.html',{})
+         @@include('html/Decor/Decor.html',{})
+
+         @@include('html/Slider/Slider.html',{
+         title:'Другие коллекции',
+         json:'json/lists/ready-solution.json'
+         })
+
+      </div>
+
+      @@include('html/4_footer.html',{})
+
+   </div>
+
+   @@include('html/Mobile-Menu/Mobile-Menu.html',{})
+   @@include('html/Modal/Search.html',{})
+
+   @@include('html/3_scripts.html',{
+   swiper: true,
+   })
+
+
+</body>
+
+</html>

@@ -71,14 +71,18 @@ body {
    font-size: 24px;
    line-height: 119%;
 
-   &:first-child {
-      margin-bottom: 20px;
-   }
-
    @include size_adaptive (font-size, 24, 42, 375, 768);
 
    @media (min-width:768px) {
       font-size: 42px;
+   }
+
+   &--margin {
+      margin-bottom: 20px;
+
+      @media (min-width:768px) {
+         margin-bottom: 40px;
+      }
    }
 }
 
@@ -204,6 +208,38 @@ body {
       z-index: 2;
    }
 }
+
+.swiper-pagination {
+   margin-top: 20px;
+}
+
+.swiper-scrollbar-horizontal {
+   background-color: #DBDBDB;
+   height: 9px;
+
+
+}
+
+.swiper-scrollbar-drag {
+   background-color: #004A5E;
+   min-height: 9px;
+}
+
+// .swiper-pagination {
+//    margin-top: 20px;
+//    display: flex;
+
+//    .swiper-pagination-bullet {
+//       flex: 1 1 1%;
+//       height: 9px;
+//       background-color: #DBDBDB;
+//       transition: background-color $tr-time;
+
+//       &.swiper-pagination-bullet-active {
+//          background-color: #004A5E;
+//       }
+//    }
+// }
 
 .js-tabs-shell {
    will-change: height;

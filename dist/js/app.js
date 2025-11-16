@@ -246,6 +246,57 @@ if (document.querySelector('.banner-fade__swiper')) {
    setTimeout(nextSlider, delay);
 }
 
+
+if (document.querySelector('.swiper-block')) {
+   const swiperList = document.querySelectorAll('.swiper-block');
+   swiperList.forEach(e => {
+      const swiper = new Swiper(e.querySelector('.swiper'), {
+         // allowTouchMove: false,
+         spaceBetween: 10,
+         speed: 300,
+         grabCursor: true,
+         slidesPerView: 1.12,
+         navigation: {
+            nextEl: ".next",
+            prevEl: ".prev",
+         },
+         breakpoints: {
+            1024: {
+               slidesPerView: 4
+            },
+            768: {
+               slidesPerView: 2.2
+            }
+         },
+         // pagination: {
+         //    el: e.querySelector('.swiper-pagination'),
+         //    type: 'bullets',
+         //    clickable: true,
+         // },
+         scrollbar: {
+            el: e.querySelector('.swiper-pagination'),
+         },
+      });
+   })
+}
+
+if (document.querySelector('.card-production__swiper-body')) {
+   const wrapper = document.querySelector('.card-production__swiper-body');
+   const swiper = new Swiper(wrapper.querySelector('.swiper'), {
+      loop: true,
+      spaceBetween: 10,
+      speed: 300,
+      slidesPerView: 1,
+      grabCursor: true,
+
+      navigation: {
+         nextEl: wrapper.querySelector('.button-next'),
+         prevEl: wrapper.querySelector('.button-prev'),
+      },
+
+   });
+}
+
 /* пример инициализации слайдера */
 // if (document.querySelector('.swiper')) {
 //    const swiper = new Swiper('.swiper', {
