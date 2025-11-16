@@ -1,6 +1,14 @@
+@use '../../../scss/assets/mixin.scss' as *;
+
 .numbered-list {
-   --width-number: 204px;
+   --width-number: 0;
    border-bottom: 1px solid #000000;
+
+   @include size_adaptive (--width-number, 36, 188, 768, 1024);
+
+   @media (min-width:1024px) {
+      --width-number: 188px;
+   }
 
    &:first-child {
       border-top: 1px solid #000000;
@@ -10,13 +18,14 @@
       padding-top: 16px;
       padding-bottom: 16px;
       display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
    }
 
    &__number {
       padding-top: 4px;
       padding-bottom: 4px;
-      padding-right: 16px;
-      flex: 0 0 var(--size-number, 204px);
+      flex: 0 0 var(--width-number, 188px);
       font-weight: 700;
       font-size: 16px;
       letter-spacing: -0.01em;
@@ -25,7 +34,6 @@
    &__content {
       padding-top: 4px;
       padding-bottom: 4px;
-      padding-right: 16px;
       flex: 1 1 auto;
    }
 
@@ -47,6 +55,10 @@
    &__button {
       pointer-events: none;
 
+      @media (max-width:767.98px) {
+         flex: 0 0 100%;
+      }
+
       .js-tabs-open & {
          pointer-events: all;
       }
@@ -58,7 +70,7 @@
 
    &__info-content {
       margin-left: auto;
-      width: calc(100% - var(--width-number));
+      width: calc(100% - var(--width-number) - 16px);
 
       img {
          width: 100%;

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   @@include('html/1_head.html',{"title":"Catalog"})
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/2_header.html',{})
+
+      <div class="main">
+         <div class="container">
+            @@include('html/UI/Bread-Crumbs/Bread-Crumbs.html',{"list":[{"name": "Главная", "link": "index.html"}, {"name": "Каталог", "link": "catalog.html"}]})
+         </div>
+
+         @@include('html/Catalog/Catalog.html',{})
+
+         @@include('html/Contact/Contact.html',{})
+
+      </div>
+
+      @@include('html/4_footer.html',{})
+
+   </div>
+
+   @@include('html/Mobile-Menu/Mobile-Menu.html',{})
+   @@include('html/Modal/Search.html',{})
+
+   @@include('html/3_scripts.html',{
+   swiper: true,
+   })
+
+
+</body>
+
+</html>

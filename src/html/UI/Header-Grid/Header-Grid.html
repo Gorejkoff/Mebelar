@@ -2,7 +2,19 @@
    @@include('../Name-Section/Name-Sectio.html',{
    nameSection: '@@nameSection'
    })
-   <h2 class="header-grid__title title-block">
-      @@title
-   </h2>
+   <div class="header-grid__shell title-block">
+      <h2>@@title</h2>
+      @@if(context.button){ <div class="header-grid__subgrid">
+         <div>}
+            @@if(context.text){ <div class="header-grid__text">@@text</div> }
+            @@if(context.button){</div>
+         <div>
+            @@include('../../UI/Button/Button.html',{
+            text:'Подробнее',
+            link: '#0',
+            class:'button-border'
+            })
+         </div>
+      </div>}
+   </div>
 </div>

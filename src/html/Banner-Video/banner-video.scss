@@ -1,8 +1,12 @@
 .banner-video {
    position: relative;
    display: flex;
-   min-height: 53.47vw;
    color: #ffffff;
+   min-height: 100vh;
+
+   @media (min-width:1024px) {
+      min-height: 53.47vw;
+   }
 
    video {
       position: absolute;
@@ -23,17 +27,26 @@
       position: relative;
       z-index: 2;
       display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: flex-end;
       gap: 20px;
       width: 100%;
+
+      @media (min-width:1024px) {
+         align-items: flex-end;
+         flex-direction: row;
+         justify-content: space-between;
+      }
    }
 
    &__info {
-      flex: 0 1 660px;
       display: flex;
       flex-direction: column;
       gap: 20px;
+
+      @media (min-width:1024px) {
+         flex: 0 1 660px;
+      }
    }
 
    &__title {

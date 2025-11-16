@@ -4,13 +4,21 @@
    display: flex;
    flex-direction: column;
    font-weight: 500;
-   font-size: 18px;
+   font-size: 16px;
    letter-spacing: -0.01em;
    background-color: #F0F0F0;
 
+   @media (min-width:768px) {
+      font-size: 18px;
+   }
+
    &__image {
       position: relative;
-      padding-bottom: 118.947%;
+      padding-bottom: 98%;
+
+      @media (min-width:1024px) {
+         padding-bottom: 118.947%;
+      }
 
       img {
          position: absolute;
@@ -49,7 +57,7 @@
       }
    }
 
-   &:hover {
+   ._pc &:hover {
       .card-link__arrow {
          opacity: 1;
       }

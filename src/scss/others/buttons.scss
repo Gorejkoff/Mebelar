@@ -1,3 +1,5 @@
+@use '../assets/variablesSCSS.scss' as *;
+
 .button-icon {
    --size: 30px;
    width: var(--size);
@@ -6,8 +8,8 @@
    display: flex;
    align-items: center;
    justify-content: center;
-
    background-color: rgba(0, 74, 94, 0.15);
+   transition: background-color $tr-time;
 
    svg {
       width: 20px;
@@ -15,6 +17,17 @@
 
       path {
          fill: #004A5E;
+         transition: fill $tr-time;
+      }
+   }
+
+   ._pc &:hover {
+      background-color: #004A5E;
+
+      svg {
+         path {
+            fill: #ffffff;
+         }
       }
    }
 }
@@ -22,7 +35,6 @@
 // burger
 .button-menu {
    position: relative;
-   display: none;
 
    &>:nth-child(1),
    &>:nth-child(2),
@@ -34,18 +46,37 @@
       height: 2px;
       background-color: #004A5E;
       border-radius: 2px;
+      transition: transform $tr-time, opacity $tr-time ;
    }
 
    &>:nth-child(1) {
       transform: translate(-50%, calc(-50% - 4px));
+
+      .menu-is-open & {
+         transform: translate(-50%, calc(-50%)) rotate(45deg);
+      }
    }
 
    &>:nth-child(2) {
       transform: translate(-50%, -50%);
+
+      .menu-is-open & {
+         opacity: 0;
+      }
    }
 
    &>:nth-child(3) {
       transform: translate(-50%, calc(-50% + 4px));
+
+      .menu-is-open & {
+         transform: translate(-50%, calc(-50%)) rotate(-45deg);
+      }
    }
+
+   @media (min-width:1200px) {
+      display: none;
+   }
+
+
 
 }

@@ -1,0 +1,91 @@
+.form {
+   .button {
+      width: 100%;
+   }
+}
+
+.input {
+   display: block;
+   padding-bottom: 16px;
+   margin-bottom: 45px;
+   border-bottom: 1px solid #ffffff;
+
+   input {
+      width: 100%;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      color: #ffffff;
+   }
+
+   input::placeholder {
+      color: #adadad;
+   }
+}
+
+.input-checkbox {
+   margin-bottom: 45px;
+   cursor: pointer;
+   display: flex;
+   gap: 12px;
+   font-size: 14px;
+
+   input {
+      display: none;
+   }
+
+   &__check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 25px;
+      min-width: 25px;
+      width: 25px;
+      background-color: transparent;
+      border: 1px solid #ffffff;
+
+      svg {
+         width: 80%;
+         height: 80%;
+         opacity: 0;
+      }
+
+      &+* {
+         margin-top: 5.5px;
+      }
+
+   }
+
+   input:checked+.input-checkbox__check {
+      background-color: #ffffff;
+
+      svg {
+         opacity: 1;
+      }
+   }
+}
+
+.input-search {
+   padding-left: 50px;
+   height: 50px;
+   width: 100%;
+   background-color: #f3f3f3;
+   font-size: 14px;
+   letter-spacing: -0.01em;
+
+   @media (min-width:768px) {
+      font-size: 16px;
+
+   }
+}
+
+.form-search {
+   position: relative;
+
+   .button-search {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      transform: translateY(-50%);
+   }
+}

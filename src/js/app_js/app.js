@@ -40,24 +40,24 @@ function throttle(callee, timeout) {
 
 
 /* запись переменных высоты элементов */
-// function addHeightVariable() {
-//    if (typeof HEADER !== "undefined") {
-//       document.body.style.setProperty('--height-header', `${HEADER.offsetHeight}px`)
-//    }
-// }
-// addHeightVariable();
+function addHeightVariable() {
+   if (typeof HEADER !== "undefined") {
+      document.body.style.setProperty('--height-header', `${HEADER.offsetHeight}px`)
+   }
+}
+addHeightVariable();
 
 
 // ** ======================= RESIZE ======================  ** //
 window.addEventListener('resize', () => {
-   //  addHeightVariable();
+   addHeightVariable();
    closeHeaderMenu();
 })
 
 
 // ** ======================= CLICK ======================  ** //
 document.documentElement.addEventListener("click", (event) => {
-   if (event.target.closest('.open-menu')) { openHeaderMenu() }
+   if (event.target.closest('.js-open-mobile-menu')) { openHeaderMenu() }
 })
 
 
@@ -68,7 +68,7 @@ function closeHeaderMenu() {
    document.body.classList.remove('menu-is-open')
 }
 
-
+//  запуск видео
 if (document.querySelector('.banner-video video')) {
    let callback = function (entries, observer) {
       entries.forEach((entry) => {

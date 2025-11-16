@@ -1,4 +1,5 @@
 @use 'variablesSCSS' as *;
+@use 'mixin.scss' as *;
 
 body {
    font-family: var(--font-family);
@@ -44,27 +45,71 @@ body {
 }
 
 .padding-section {
-   padding-top: 100px;
-   padding-bottom: 100px;
+   padding-top: 40px;
+   padding-bottom: 40px;
+
+   @include size_adaptive (padding-top, 40, 100, 375, 1024);
+   @include size_adaptive (padding-bottom, 40, 100, 375, 1024);
+
+   @media (min-width:1024px) {
+      padding-top: 100px;
+      padding-bottom: 100px;
+   }
+}
+
+.padding-section-bottom {
+   padding-bottom: 40px;
+   @include size_adaptive (padding-bottom, 40, 100, 375, 1024);
+
+   @media (min-width:1024px) {
+      padding-bottom: 100px;
+   }
 }
 
 .title-block {
    font-family: var(--font-family-title);
-   font-size: 42px;
+   font-size: 24px;
    line-height: 119%;
 
    &:first-child {
       margin-bottom: 20px;
+   }
+
+   @include size_adaptive (font-size, 24, 42, 375, 768);
+
+   @media (min-width:768px) {
+      font-size: 42px;
    }
 }
 
 .grid {
    display: grid;
    gap: 20px;
-   grid-template-columns: repeat(var(--column, 4), 1fr);
+   grid-template-columns: 1fr;
 
    .column-3 {
       --column: 3;
+   }
+
+   @media (min-width:768px) {
+      grid-template-columns: repeat(var(--column, 2), 1fr);
+
+   }
+
+   @media (min-width:1024px) {
+      grid-template-columns: repeat(var(--column, 4), 1fr);
+   }
+}
+
+._pc button.link-text,
+._pc a.link-text {
+   text-decoration: underline;
+   text-decoration-color: transparent;
+   text-underline-offset: 3px;
+   transition: text-decoration-color $tr-time;
+
+   &:hover {
+      text-decoration-color: inherit;
    }
 }
 
@@ -153,6 +198,11 @@ body {
    position: relative;
    transition-property: transform;
    touch-action: pan-y;
+   z-index: 1;
+
+   &.swiper-slide-active {
+      z-index: 2;
+   }
 }
 
 .js-tabs-shell {

@@ -40,24 +40,24 @@ function throttle(callee, timeout) {
 
 
 /* запись переменных высоты элементов */
-// function addHeightVariable() {
-//    if (typeof HEADER !== "undefined") {
-//       document.body.style.setProperty('--height-header', `${HEADER.offsetHeight}px`)
-//    }
-// }
-// addHeightVariable();
+function addHeightVariable() {
+   if (typeof HEADER !== "undefined") {
+      document.body.style.setProperty('--height-header', `${HEADER.offsetHeight}px`)
+   }
+}
+addHeightVariable();
 
 
 // ** ======================= RESIZE ======================  ** //
 window.addEventListener('resize', () => {
-   //  addHeightVariable();
+   addHeightVariable();
    closeHeaderMenu();
 })
 
 
 // ** ======================= CLICK ======================  ** //
 document.documentElement.addEventListener("click", (event) => {
-   if (event.target.closest('.open-menu')) { openHeaderMenu() }
+   if (event.target.closest('.js-open-mobile-menu')) { openHeaderMenu() }
 })
 
 
@@ -68,7 +68,7 @@ function closeHeaderMenu() {
    document.body.classList.remove('menu-is-open')
 }
 
-
+//  запуск видео
 if (document.querySelector('.banner-video video')) {
    let callback = function (entries, observer) {
       entries.forEach((entry) => {
@@ -82,6 +82,120 @@ if (document.querySelector('.banner-video video')) {
    let observer = new IntersectionObserver(callback, { threshold: 0.2 });
    let target = document.querySelectorAll('.banner-video video');
    target.forEach(event => observer.observe(event));
+}
+
+// перемещение блоков при адаптиве
+// data-da=".class,3,768,min" 
+// класс родителя куда перемещать
+// порядковый номер в блоке куда перемещается начиная с 0 как индексы массива
+// viewport
+// min = min-width, max = max-width
+// два перемещения: data-da=".class,3,768,min,.class2,1,1024,max"
+const ARRAY_DATA_DA = document.querySelectorAll('[data-da]');
+ARRAY_DATA_DA.forEach(function (e) {
+   const dataArray = e.dataset.da.split(',');
+   const addressMove = searchDestination(e, dataArray[0]);
+   const addressMoveSecond = dataArray[4] && searchDestination(e, dataArray[4]);
+   const addressParent = e.parentElement;
+   const listChildren = addressParent.children;
+   const direction = dataArray[3] || 'min';
+   const directionSecond = dataArray[7] || 'min';
+   const mediaQuery = window.matchMedia(`(${direction}-width: ${dataArray[2]}px)`);
+   const mediaQuerySecond = dataArray[6] && window.matchMedia(`(${directionSecond}-width: ${dataArray[6]}px)`);
+   for (let i = 0; i < listChildren.length; i++) { !listChildren[i].dataset.n && listChildren[i].setAttribute('data-n', `${i}`) };
+   mediaQuery.matches && startChange(mediaQuery, addressMove, e, listChildren, addressParent, dataArray);
+   if (mediaQuerySecond && mediaQuerySecond.matches) moving(e, dataArray[5], addressMoveSecond);
+   mediaQuery.addEventListener('change', () => { startChange(mediaQuery, addressMove, e, listChildren, addressParent, dataArray) });
+   if (mediaQuerySecond) mediaQuerySecond.addEventListener('change', () => {
+      if (mediaQuerySecond.matches) { moving(e, dataArray[4], addressMoveSecond); return; };
+      startChange(mediaQuery, addressMove, e, listChildren, addressParent, dataArray);
+   });
+});
+
+function startChange(mediaQuery, addressMove, e, listChildren, addressParent, dataArray) {
+   if (mediaQuery.matches) { moving(e, dataArray[1], addressMove); return; }
+   if (listChildren.length > 0) {
+      for (let z = 0; z < listChildren.length; z++) {
+         if (listChildren[z].dataset.n > e.dataset.n) {
+            listChildren[z].before(e);
+            break;
+         } else if (z == listChildren.length - 1) {
+            addressParent.append(e);
+         }
+      }
+      return;
+   }
+   addressParent.prepend(e);
+};
+
+function searchDestination(e, n) {
+   if (!e) return;
+   if (e.classList.contains(n.slice(1))) { return e }
+   if (e.parentElement && e.parentElement.querySelector(n)) { return e.parentElement.querySelector(n) };
+   return searchDestination(e.parentElement, n);
+}
+
+function moving(e, order, addressMove) {
+   if (order == "first") { addressMove.prepend(e); return; };
+   if (order == "last") { addressMove.append(e); return; };
+   if (addressMove.children[order]) { addressMove.children[order].before(e); return; }
+   addressMove.append(e);
+}
+
+
+
+/* открывает, закрывает модальные окна. */
+/*
+добавить классы
+js-modal-hidden - родительский контейнер модального окна который скрывается и показывается, задать стили скрытия
+js-modal-visible - задать стили открытия
+js-modal-close - кнопка закрытия модального окна находится внутри js-modal-hidde
+кнопка открытия, любая:
+js-modal-open - кнопка открытия модального окна
+data-modal_open="id" - id модального окна
+если надо что бы окно закрывалось при клике на пустое место (фон), добавляется атрибут js-modal-stop-close.
+js-modal-stop-close - атрибут указывает на поле, при клике на которое не должно происходить закрытие окна, 
+т.е. контейнер контента, при этом внешний родительский контейнет помечается атрибутом js-modal-close.
+допускается дополнительно кнопка закрытия внутри js-modal-stop-close.
+*/
+document.addEventListener('click', (event) => {
+   if (event.target.closest('.js-modal-open')) { openModal(event) }
+   if (event.target.closest('.js-modal-close')) { testModalStopClose(event) }
+})
+function openModal(event) {
+   let id = event.target.closest('.js-modal-open').dataset.modal_open;
+   if (typeof id !== "undefined") { initOpenModal(id) };
+}
+function testModalStopClose(event) {
+   if (event.target.closest('.js-modal-stop-close') &&
+      event.target.closest('.js-modal-stop-close') !==
+      event.target.closest('.js-modal-close').closest('.js-modal-stop-close')) {
+      return
+   }
+   closeModal(event);
+}
+function closeModal(event) {
+   event.target.closest('.js-modal-hidden').classList.remove('js-modal-visible');
+   activeScrollCloseModal();
+}
+// функция закрытия модального окна (передать id модального окна)
+function initCloseModal(id) {
+   if (document.querySelector(`#${id}`)) {
+      document.querySelector(`#${id}`).classList.remove('js-modal-visible');
+   }
+   activeScrollCloseModal();
+}
+// функция открытия модального окна (передать id модального окна)
+function initOpenModal(id) {
+   if (document.querySelector(`#${id}`)) {
+      document.querySelector(`#${id}`).classList.add('js-modal-visible');
+      document.body.classList.add('body-overflow')
+   }
+}
+function activeScrollCloseModal() {
+   if (!document.querySelector('.js-modal-visible')) {
+      document.body.classList.remove('body-overflow');
+   }
 }
 
 
@@ -243,17 +357,17 @@ class Tabs {
       window.addEventListener('resize', this.resize);
    };
    eventMouseOver = (event) => {
-      if (event.target.closest('.js-tabs-hover')) this.openTabs(event);
-      this.closeAllHover(event);
+      if (event.target.closest('.js-tabs-hover')) this.openTabs(event.target);
+      this.closeAllHover(event.target);
    };
    eventClick = (event) => {
       if (isPC && event.target.closest('.js-tabs-hover')) return;
       this.closeAll(event);
-      if (event.target.closest('.js-tabs-click')) this.openTabs(event);
-      if (event.target.closest('.js-tabs-toggle')) this.toggleTabs(event);
+      if (event.target.closest('.js-tabs-click')) this.openTabs(event.target);
+      if (event.target.closest('.js-tabs-toggle')) this.toggleTabs(event.target);
    };
-   openTabs = (event) => {
-      const body = event.target.closest('.js-tabs-body');
+   openTabs = (element) => {
+      const body = element.closest('.js-tabs-body');
       if (!body) return;
       body.classList.add('js-tabs-open');
       this.setHeight(body);
@@ -267,8 +381,8 @@ class Tabs {
       if (this.listClosingTabs.length == 0 && body) return;
       this.listClosingTabs.forEach((e) => { if (e !== body) this.closeTabs(e); })
    };
-   closeAllHover = (event) => {
-      const body = event.target.closest('.js-tabs-hover');
+   closeAllHover = (element) => {
+      const body = element.closest('.js-tabs-hover');
       if (this.listHover.length == 0 && body) return;
       this.listHover.forEach((e) => { if (e !== body) this.closeTabs(e) })
    };
@@ -277,13 +391,13 @@ class Tabs {
       body.querySelector('.js-tabs-shell').style.height = heightValue + "px";
    };
    clearHeight = (body) => { body.querySelector('.js-tabs-shell').style.height = "" }
-   toggleTabs = (event) => {
-      const body = event.target.closest('.js-tabs-body');
+   toggleTabs = (element) => {
+      const body = element.closest('.js-tabs-body');
       if (body.classList.contains('js-tabs-open')) {
          this.closeTabs(body);
          return;
       }
-      this.openTabs(event);
+      this.openTabs(element);
    };
    throttle = () => {
       let timer = null;
@@ -302,8 +416,9 @@ class Tabs {
 const tabs = new Tabs();
 tabs.init();
 
-
-
+if (document.querySelector('.numbered-list')) {
+   tabs.openTabs(document.querySelector('.numbered-list'))
+}
 
 
 

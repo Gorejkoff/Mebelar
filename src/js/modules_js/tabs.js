@@ -22,17 +22,17 @@ class Tabs {
       window.addEventListener('resize', this.resize);
    };
    eventMouseOver = (event) => {
-      if (event.target.closest('.js-tabs-hover')) this.openTabs(event);
-      this.closeAllHover(event);
+      if (event.target.closest('.js-tabs-hover')) this.openTabs(event.target);
+      this.closeAllHover(event.target);
    };
    eventClick = (event) => {
       if (isPC && event.target.closest('.js-tabs-hover')) return;
       this.closeAll(event);
-      if (event.target.closest('.js-tabs-click')) this.openTabs(event);
-      if (event.target.closest('.js-tabs-toggle')) this.toggleTabs(event);
+      if (event.target.closest('.js-tabs-click')) this.openTabs(event.target);
+      if (event.target.closest('.js-tabs-toggle')) this.toggleTabs(event.target);
    };
-   openTabs = (event) => {
-      const body = event.target.closest('.js-tabs-body');
+   openTabs = (element) => {
+      const body = element.closest('.js-tabs-body');
       if (!body) return;
       body.classList.add('js-tabs-open');
       this.setHeight(body);
@@ -46,8 +46,8 @@ class Tabs {
       if (this.listClosingTabs.length == 0 && body) return;
       this.listClosingTabs.forEach((e) => { if (e !== body) this.closeTabs(e); })
    };
-   closeAllHover = (event) => {
-      const body = event.target.closest('.js-tabs-hover');
+   closeAllHover = (element) => {
+      const body = element.closest('.js-tabs-hover');
       if (this.listHover.length == 0 && body) return;
       this.listHover.forEach((e) => { if (e !== body) this.closeTabs(e) })
    };
@@ -56,13 +56,13 @@ class Tabs {
       body.querySelector('.js-tabs-shell').style.height = heightValue + "px";
    };
    clearHeight = (body) => { body.querySelector('.js-tabs-shell').style.height = "" }
-   toggleTabs = (event) => {
-      const body = event.target.closest('.js-tabs-body');
+   toggleTabs = (element) => {
+      const body = element.closest('.js-tabs-body');
       if (body.classList.contains('js-tabs-open')) {
          this.closeTabs(body);
          return;
       }
-      this.openTabs(event);
+      this.openTabs(element);
    };
    throttle = () => {
       let timer = null;
@@ -81,8 +81,9 @@ class Tabs {
 const tabs = new Tabs();
 tabs.init();
 
-
-
+if (document.querySelector('.numbered-list')) {
+   tabs.openTabs(document.querySelector('.numbered-list'))
+}
 
 
 

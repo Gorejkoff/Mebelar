@@ -1,4 +1,3 @@
-// @use 'mobile-menu';
 @use 'buttons';
 
 @use '../../html/Banner-Fade/banner-fade';
@@ -6,11 +5,20 @@
 @use '../../html/Banner-Video/banner-video';
 @use '../../html/Advantages/advantages';
 @use '../../html/Portfolio/portfolio';
+@use '../../html/Contact/contact';
+@use '../../html/Experience/experience';
+@use '../../html/Mobile-Menu/mobile-menu';
+@use '../../html/Modal/modal';
 
+@use '../../html/UI/Page-Title/page-title';
 @use '../../html/UI/Button/button';
+@use '../../html/UI/Bread-Crumbs/bread-crumbs';
+@use '../../html/UI/Form/form';
 @use '../../html/UI/Numbered-List/numbered-list';
 @use '../../html/UI/Button-Swiper/button-swiper';
 @use '../../html/UI/Name-Section/name-section';
 @use '../../html/UI/Header-Grid/header-grid';
 @use '../../html/UI/Cards/Card-Link/card-link';
 @use '../../html/UI/Cards/Card-News/card-news';
+@use '../../html/UI/Pagination-Page/pagination-page';
+@use '../../html/UI/Filter/filter';

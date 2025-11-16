@@ -1,0 +1,17 @@
+<section class="padding-section-bottom">
+   <div class="container">
+      @@include('../UI/Page-Title/Page-Title.html',{
+      title:'Каталог мебели',
+      text:'Создайте пространство, в котором приятно жить и работать. В нашем каталоге — мебель на любой вкус и стиль.'
+      })
+
+      @@include('../UI/Filter/Filter.html',{})
+
+      <div class="grid">
+         @@loop('../UI/Cards/Card-Link/Card-Link.html', 'json/lists/ready-solution.json')
+      </div>
+
+      @@include('../UI/Pagination-Page/Pagination-Page.html',{})
+
+   </div>
+</section>

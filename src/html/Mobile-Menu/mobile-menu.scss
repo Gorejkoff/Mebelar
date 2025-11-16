@@ -1,0 +1,49 @@
+@use '../../scss/assets/mixin.scss' as *;
+@use '../../scss/assets/variablesSCSS.scss' as *;
+
+
+.mobile-menu {
+   --padding: calc(var(--height-header, 60) + 20px);
+   padding-top: var(--padding);
+   position: fixed;
+   top: 0;
+   left: 120%;
+   z-index: 4;
+   height: var(--vh);
+   width: 100%;
+   max-width: 100vw;
+   transition: left $tr-time-l;
+
+   background-color: #ffffff;
+
+   .menu-is-open & {
+      left: 0;
+   }
+
+   &__body {
+      max-height: calc(var(--vh) - var(--padding));
+      overflow-y: auto;
+   }
+
+   .header__nav {
+      flex-direction: column;
+
+      &>* {
+         border-bottom: 1px solid #d9d9d9;
+      }
+   }
+
+   .header__link {
+      padding-top: 16px;
+      padding-bottom: 16px;
+   }
+}
+
+
+.menu-is-open {
+   overflow: hidden;
+
+   .hidden-when-open-menu {
+      display: none;
+   }
+}

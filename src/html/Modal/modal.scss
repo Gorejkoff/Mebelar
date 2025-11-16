@@ -1,0 +1,101 @@
+@use '../../scss/assets/variablesSCSS.scss' as *;
+
+.modal {
+   --height-modal: var(--vh, 100vh);
+   position: fixed;
+   top: 0;
+   right: 0;
+   z-index: 19;
+   width: 100vw;
+   height: var(--height-modal);
+   background-color: rgba(0, 0, 0, 0.4);
+   scrollbar-gutter: stable;
+   overflow-y: auto;
+   overflow-x: hidden;
+   transition: right $tr-time-l;
+
+   @supports(height: 100dvh) {
+      --height-modal: 100dvh;
+   }
+
+   @media (min-width:768px) {
+      top: 0;
+      --height-modal: 100vh;
+
+      @supports(height: 100dvh) {
+         --height-modal: 100dvh
+      }
+   }
+
+   &__container {
+      padding-top: var(--height-header);
+      padding-bottom: var(--height-header);
+      min-height: var(--height-modal);
+      display: flex;
+      align-items: flex-start;
+
+      // @media (max-width:767.98px) {
+      //    padding: 0;
+      // }
+   }
+
+   &__body {
+      padding: 30px 16px 20px;
+      position: relative;
+      margin: 0 auto;
+      width: 100%;
+      background-color: var(--color-white);
+
+      @media (min-width:768px) {
+         padding: 40px;
+      }
+   }
+
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+
+      @media (min-width:768px) {
+         margin-bottom: 20px;
+      }
+   }
+
+   &__title {
+      font-weight: 700;
+      font-size: 18px;
+
+      @media (min-width:768px) {
+         font-size: 24px;
+      }
+   }
+
+   &__close {
+      position: relative;
+      width: 24px;
+      min-width: 24px;
+      height: 24px;
+      transform: translate(10px, -10px);
+
+      @media (min-width:768px) {
+         width: 32px;
+         min-width: 32px;
+         height: 32px;
+         transform: translate(30px, -30px);
+      }
+   }
+}
+
+
+.js-modal-hidden {
+   right: 120%;
+
+   &.js-modal-visible {
+      right: 0;
+   }
+}
+
+.body-overflow {
+   overflow: hidden;
+}

@@ -1,10 +1,52 @@
 @use '../assets/variablesSCSS.scss' as *;
 
 .header {
+   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
    &__body {
-      min-height: 100px;
+      position: relative;
+      min-height: 60px;
       display: flex;
       justify-content: space-between;
+      gap: 30px;
+      z-index: 5;
+
+      @media (min-width:768px) {
+         min-height: 100px;
+      }
+
+      .header__link {
+         &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: transparent;
+            transition: $tr-time;
+         }
+
+         &:hover::before {
+            background-color: #0098c2;
+         }
+      }
+
+      .header__nav-menu-body {
+         position: absolute;
+         top: 100%;
+         left: 0;
+         z-index: 10;
+         width: max-content;
+         max-width: 250px;
+      }
+
+      .header__nav {
+         &>* {
+            display: flex;
+            align-items: stretch;
+         }
+      }
    }
 
    &__logo {
@@ -15,35 +57,17 @@
    &__nav {
       display: flex;
       justify-content: center;
-      gap: 30px;
-
-      &>* {
-         display: flex;
-         align-items: center;
-      }
+      flex-wrap: wrap;
+      column-gap: 30px;
    }
 
    &__link {
       position: relative;
-      height: 100%;
+      display: flex;
+      align-items: center;
       font-size: 16px;
       font-weight: 500;
       color: #004A5E;
-
-      &::before {
-         content: '';
-         position: absolute;
-         bottom: 0;
-         left: 0;
-         width: 100%;
-         height: 5px;
-         background-color: transparent;
-         transition: $tr-time;
-      }
-
-      &:hover::before {
-         background-color: #0098c2;
-      }
    }
 
    &__menu {
@@ -54,12 +78,6 @@
 
    &__nav-menu-wrapper {
       position: relative;
-
-      &:hover {
-         .header__nav-menu-body {
-            display: block;
-         }
-      }
    }
 
    &__nav-menu-button {
@@ -69,12 +87,6 @@
    }
 
    &__nav-menu-body {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: max-content;
-      max-width: 250px;
-      display: none;
 
       ol,
       ul {
@@ -89,8 +101,12 @@
                margin-bottom: 20px;
             }
 
-            a:hover {
-               font-weight: 600;
+            a {
+               transition: text-shadow $tr-time;
+            }
+
+            ._pc & a:hover {
+               text-shadow: 0 0, 0 0;
             }
          }
       }

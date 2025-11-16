@@ -1,0 +1,81 @@
+@use '../../../scss/assets/variablesSCSS.scss' as *;
+
+.filter {
+   position: relative;
+   margin-bottom: 40px;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   gap: 10px;
+
+   @media (min-width:768px) {
+      flex-direction: row;
+   }
+
+   &__body {
+      position: relative;
+      width: 100%;
+
+      @media (min-width:768px) {
+         width: 170px;
+      }
+   }
+
+   &__button {
+      padding: 9px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      min-height: 36px;
+      font-weight: 300;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      background-color: #F0F0F0;
+      letter-spacing: -0.01em;
+
+      svg {
+         transition: transform $tr-time;
+      }
+
+      .js-tabs-open & {
+         svg {
+            transform: rotate3d(1, 0, 0, 180deg);
+         }
+      }
+   }
+
+   &__shell {
+      position: absolute;
+      z-index: 2;
+      top: calc(100% + 4px);
+      width: 100%;
+
+      .js-tabs-open & {
+         z-index: 3;
+      }
+   }
+
+   &__list {
+      padding: 11px 16px;
+      background-color: #F0F0F0;
+
+      li {
+         &:not(:last-child) {
+            margin-bottom: 10px;
+         }
+      }
+
+      a,
+      button {
+         padding: 5px 0;
+         letter-spacing: -0.01em;
+         transition: text-shadow $tr-time;
+
+         &:hover {
+            text-shadow: 0 0, 0 0;
+         }
+      }
+   }
+}

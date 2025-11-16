@@ -1,3 +1,5 @@
+@use '../../scss/assets/mixin.scss' as *;
+
 .advantages {
    position: relative;
    --color: #ffffff;
@@ -6,11 +8,15 @@
 
    &__grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 70px;
-   }
 
-   &__cell {}
+      @include size_adaptive (gap, 20, 70, 375, 1024);
+
+      @media (min-width:1024px) {
+         grid-template-columns: repeat(4, 1fr);
+      }
+   }
 
    &__icon {
       margin-bottom: 20px;
@@ -34,9 +40,14 @@
    }
 
    &__contour {
+      display: none;
       position: absolute;
       bottom: 7px;
       right: 0;
       max-width: 25%;
+
+      @media (min-width:1024px) {
+         display: block;
+      }
    }
 }

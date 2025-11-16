@@ -1,18 +1,55 @@
 .header-grid {
-   margin-bottom: 50px;
+   margin-bottom: 40px;
    display: grid;
-   grid-template-columns: repeat(4, 1fr);
+   grid-template-columns: 1fr;
    gap: 20px;
 
-   &__title {
-      grid-column: span 3;
+   @media (min-width:1024px) {
+      margin-bottom: 50px;
+      grid-template-columns: repeat(4, 1fr);
    }
 
    &.no-grid {
       display: block;
 
-      .header-grid__title {
+      .header-grid__shell {
          margin-top: 26px;
       }
    }
+
+   &__shell {
+      @media (min-width:1024px) {
+         grid-column: span 3;
+      }
+   }
+
+   &__text {
+      font-size: 16px;
+      line-height: 150%;
+
+      &:not(:first-child) {
+         margin-top: 16px;
+      }
+   }
+
+   &__subgrid {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @media (min-width:1024px) {
+         flex-direction: row;
+         align-items: flex-end;
+      }
+
+      &>* {
+         flex: 1 1 1%;
+      }
+
+      .header-grid__text {
+         max-width: 367px;
+      }
+   }
+
 }

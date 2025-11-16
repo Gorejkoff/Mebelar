@@ -1,0 +1,40 @@
+@use '../../../scss/assets/variablesSCSS.scss' as *;
+
+.pagination-page {
+   margin-top: 40px;
+   display: flex;
+   justify-content: center;
+   gap: 8px;
+
+   a {
+      width: 34px;
+      min-width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #004A5E;
+      color: #004A5E;
+      transition: background-color $tr-time;
+
+      svg {
+         width: 20px;
+
+         path {
+            transition: fill $tr-time;
+         }
+      }
+
+      &.active,
+      &:hover {
+         color: #ffffff;
+         background-color: #004A5E;
+
+         svg {
+            path {
+               fill: #ffffff;
+            }
+         }
+      }
+   }
+}

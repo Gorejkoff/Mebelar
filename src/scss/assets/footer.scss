@@ -1,1 +1,164 @@
 @use '../assets/variablesSCSS.scss' as *;
+
+.footer {
+   position: relative;
+   background-color: #004A5E;
+   color: #ffffff;
+
+   &__container {}
+
+   &__body {
+      padding-top: 40px;
+      padding-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+
+      @media (min-width:768px) {
+         padding-top: 60px;
+         padding-bottom: 40px;
+      }
+
+      &>* {
+         flex: 1 1 1%;
+      }
+   }
+
+   &__logo {
+      flex: 0 0 100%;
+      text-align: center;
+
+      @media (min-width:1024px) {
+         text-align: left;
+         flex: 1 1 1%;
+      }
+   }
+
+   &__title-section {
+      margin-bottom: 40px;
+      font-size: 16px;
+      font-weight: 500;
+      opacity: 0.6;
+   }
+
+   &__list {
+      font-size: 14px;
+
+      &>*:not(:last-child) {
+         margin-bottom: 30px;
+      }
+   }
+
+   &__contacts {
+      flex: 0 0 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 44px;
+
+      @media (min-width:1024px) {
+         flex: 1 1 1%;
+      }
+   }
+
+   &__social-networking {}
+
+   &__contour {
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+   }
+
+   &__icons {
+      display: flex;
+      gap: 10px;
+   }
+
+   &__icon {
+      display: block;
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background-color: #105b70;
+      transition: background-color $tr-time;
+
+      svg {
+         width: 100%;
+
+         path {
+            fill: #ffffff;
+            transition: fill $tr-time;
+         }
+      }
+
+      ._pc &:hover {
+         background-color: #ffffff;
+
+         svg {
+            path {
+               fill: #101010;
+            }
+         }
+      }
+   }
+
+   &__icon-info {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #bababa;
+   }
+
+   &__bottom {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      background-color: #004456;
+      font-size: 13px;
+   }
+
+   &__bottom-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-weight: 400;
+      font-size: 11px;
+
+      @media (min-width:768px) {
+         font-size: 13px;
+         justify-content: space-between;
+      }
+
+      &>* {
+         opacity: 0.6;
+      }
+   }
+
+
+
+   &__bottom-links {
+      display: flex;
+      // flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+
+      @media (min-width:768px) {
+         gap: 16px;
+      }
+
+      a {
+         text-align: center;
+      }
+
+      a:not(:last-child)::after {
+         content: '|';
+         padding-left: 8px;
+
+         @media (min-width:768px) {
+            padding-left: 16px;
+         }
+      }
+   }
+}
