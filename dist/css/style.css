@@ -531,6 +531,7 @@ body {
 
 .footer__list {
   font-size: 14px;
+  line-height: 130%;
 }
 
 .footer__list > *:not(:last-child) {
@@ -1070,6 +1071,12 @@ body {
   max-width: 100%;
 }
 
+.contact__form {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 490px;
+          flex: 0 1 490px;
+}
+
 .experience__image img {
   width: 100%;
 }
@@ -1338,6 +1345,7 @@ body {
 .button.button-white {
   --button-background: #ffffff;
   border: 1px solid #ffffff;
+  --button-color: #000000;
 }
 
 .button.button-white:hover {
@@ -1520,6 +1528,7 @@ body {
 }
 
 .numbered-list {
+  counter-increment: item;
   --width-number: 0;
   border-bottom: 1px solid #000000;
 }
@@ -1548,6 +1557,14 @@ body {
   font-weight: 700;
   font-size: 16px;
   letter-spacing: -0.01em;
+}
+
+.numbered-list:nth-child(-n+10) .numbered-list__number::before {
+  content: "0" counter(item);
+}
+
+.numbered-list:nth-child(n+11) .numbered-list__number::before {
+  content: counter(item);
 }
 
 .numbered-list__content {
@@ -2327,6 +2344,10 @@ body {
 
   .numbered-list {
     --width-number: 188px;
+  }
+
+  .name-section {
+    padding-top: 10px;
   }
 
   .header-grid {

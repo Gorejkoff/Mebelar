@@ -6,6 +6,10 @@
    letter-spacing: -0.01em;
    color: var(--color, #000000);
 
+   @media (min-width:1024px) {
+      padding-top: 10px;
+   }
+
    svg {
       width: 10px;
 

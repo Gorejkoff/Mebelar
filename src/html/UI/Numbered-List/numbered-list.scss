@@ -1,6 +1,7 @@
 @use '../../../scss/assets/mixin.scss' as *;
 
 .numbered-list {
+   counter-increment: item;
    --width-number: 0;
    border-bottom: 1px solid #000000;
 
@@ -29,6 +30,14 @@
       font-weight: 700;
       font-size: 16px;
       letter-spacing: -0.01em;
+
+      .numbered-list:nth-child(-n+10) &::before {
+         content: "0" counter(item);
+      }
+
+      .numbered-list:nth-child(n+11) &::before {
+         content: counter(item);
+      }
    }
 
    &__content {
