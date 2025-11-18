@@ -84,6 +84,9 @@ tabs.init();
 if (document.querySelector('.numbered-list')) {
    tabs.openTabs(document.querySelector('.numbered-list'))
 }
+if (document.querySelector('.material__body')) {
+   tabs.openTabs(document.querySelector('.material__body'))
+}
 
 
 

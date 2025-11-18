@@ -1,34 +1,42 @@
 [
    {
       "text": "Мебель для персонала",
-      "image": "webp/img-7.webp"
+      "image": "webp/img-7.webp",
+      "link": "card-pablic.html"
    },
    {
       "text": "Мебель для руководителей",
-      "image": "webp/img-8.webp"
+      "image": "webp/img-8.webp",
+      "link": "card.html"
    },
    {
       "text": "Переговорные и приемные",
-      "image": "webp/img-9.webp"
+      "image": "webp/img-9.webp",
+      "link": "card.html"
    },
    {
       "text": "Системы хранения",
-      "image": "webp/img-10.webp"
+      "image": "webp/img-10.webp",
+      "link": "card.html"
    },
    {
       "text": "Офисные кресла и стулья",
-      "image": "webp/img-11.webp"
+      "image": "webp/img-11.webp",
+      "link": "card.html"
    },
    {
       "text": "Аксессуары",
-      "image": "webp/img-12.webp"
+      "image": "webp/img-12.webp",
+      "link": "card.html"
    },
    {
       "text": "Аксессуары",
-      "image": "webp/img-12.webp"
+      "image": "webp/img-12.webp",
+      "link": "card.html"
    },
    {
       "text": "Аксессуары",
-      "image": "webp/img-12.webp"
+      "image": "webp/img-12.webp",
+      "link": "card.html"
    }
 ]

@@ -66,6 +66,15 @@ body {
    }
 }
 
+.margin-section-bottom {
+   margin-bottom: 40px;
+   @include size_adaptive (margin-bottom, 40, 100, 375, 1024);
+
+   @media (min-width:1024px) {
+      margin-bottom: 100px;
+   }
+}
+
 .title-block {
    font-family: var(--font-family-title);
    font-size: 24px;

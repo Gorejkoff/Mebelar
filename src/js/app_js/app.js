@@ -23,8 +23,6 @@ const MIN768 = window.matchMedia('(min-width: 768px)');
 // variables
 const HEADER = document.getElementById('header');
 
-
-
 function throttle(callee, timeout) {
    let timer = null;
    return function perform(...args) {
@@ -37,8 +35,6 @@ function throttle(callee, timeout) {
    }
 }
 
-
-
 /* запись переменных высоты элементов */
 function addHeightVariable() {
    if (typeof HEADER !== "undefined") {
@@ -47,18 +43,45 @@ function addHeightVariable() {
 }
 addHeightVariable();
 
-
 // ** ======================= RESIZE ======================  ** //
 window.addEventListener('resize', () => {
    addHeightVariable();
    closeHeaderMenu();
 })
 
-
 // ** ======================= CLICK ======================  ** //
 document.documentElement.addEventListener("click", (event) => {
    if (event.target.closest('.js-open-mobile-menu')) { openHeaderMenu() }
 })
+
+// отключение кнопки в выборе материалов
+if (document.querySelector('.js-material-select')) {
+   function checkingButtonsRadio(list, button) {
+      const test = list.find(e => e.checked);
+      if (!test) {
+         disableButtonMaterial(button)
+         return;
+      }
+      enablingButtonMaterial(button)
+   }
+   function disableButtonMaterial(button) {
+      button.setAttribute('disabled', 'true')
+   }
+   function enablingButtonMaterial(button) {
+      button.removeAttribute('disabled')
+   }
+   const list = document.querySelectorAll('.js-material-select');
+   list.forEach((element) => {
+      const buttonSubmit = element.querySelector('.js-order-material-button')
+      const listRadioButton = Array.from(element.querySelectorAll('[type="radio"]'));
+      checkingButtonsRadio(listRadioButton, buttonSubmit)
+      element.addEventListener('change', (event) => {
+         if (event.target.type === 'radio') {
+            checkingButtonsRadio(listRadioButton, buttonSubmit)
+         }
+      })
+   })
+}
 
 
 function openHeaderMenu() {
@@ -83,3 +106,4 @@ if (document.querySelector('.banner-video video')) {
    let target = document.querySelectorAll('.banner-video video');
    target.forEach(event => observer.observe(event));
 }
+

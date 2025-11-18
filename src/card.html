@@ -2,7 +2,10 @@
 <html lang="en">
 
 <head>
-   @@include('html/1_head.html',{"title":"Mebelar Card"})
+   @@include('html/1_head.html',{
+   'title':'Mebelar Card Pablic',
+   'fancybox': true
+   })
 </head>
 
 
@@ -15,13 +18,8 @@
       <div class="main">
 
          @@include('html/Card-Product/Card-Product.html',{})
-         @@include('html/Card-Product-Info/Card-Product-Info.html',{})
-         @@include('html/Decor/Decor.html',{})
 
-         @@include('html/Slider/Slider.html',{
-         title:'Другие коллекции',
-         json:'json/lists/ready-solution.json'
-         })
+         @@include('html/Material/Material.html',{})
 
       </div>
 
@@ -34,6 +32,7 @@
 
    @@include('html/3_scripts.html',{
    swiper: true,
+   fancybox: true
    })
 
 

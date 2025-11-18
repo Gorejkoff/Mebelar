@@ -1,8 +1,28 @@
+@use '../../scss/assets/variablesSCSS.scss' as*;
+
 .experience {
 
    &__image {
-      img {
-         width: 100%;
+      position: relative;
+      overflow: hidden;
+
+      &:hover {
+         .experience__image-cover {
+            transform: translateX(-72%);
+         }
       }
+   }
+
+   &__image-item {
+      width: 100%;
+   }
+
+   &__image-cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 77%;
+      height: 100%;
+      transition: transform $tr-time-l;
    }
 }
