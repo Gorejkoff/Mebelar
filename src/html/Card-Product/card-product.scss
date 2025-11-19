@@ -31,6 +31,17 @@
       }
    }
 
+   &__place {
+      font-weight: 300;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      opacity: 0.5;
+
+      @media (min-width:992) {
+         margin-top: -17px;
+      }
+   }
+
    &__text {
       display: flex;
       flex-direction: column;
@@ -40,9 +51,15 @@
    }
 
    &__swiper {
+      display: none;
       --margin: calc((100vw - 100%) /2);
       margin-right: calc(var(--margin) * -1);
-      width: calc(100vw - var(--margin) - 42.3%);
+      max-width: calc(100vw - var(--margin) - 42.3%);
+      width: 100vw;
+
+      @media (min-width:992px) {
+         display: block;
+      }
    }
 
    &__swiper-body {

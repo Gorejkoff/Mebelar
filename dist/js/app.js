@@ -351,6 +351,32 @@ if (document.querySelector('.card-production__swiper-body')) {
    });
 }
 
+if (document.querySelector('.slider-wide__swiper')) {
+   const listElement = document.querySelectorAll('.slider-wide__swiper');
+
+   listElement.forEach(e => {
+
+      const swiper = new Swiper(e, {
+         loop: true,
+         spaceBetween: 0,
+         speed: 300,
+         slidesPerView: 1.43,
+         grabCursor: true,
+         initialSlide: 2,
+         centeredSlides: true,
+         breakpoints: {
+            768: {
+               slidesPerView: 2.85
+            }
+         },
+         navigation: {
+            nextEl: e.querySelector('.button-next'),
+            prevEl: e.querySelector('.button-prev'),
+         },
+      });
+   })
+}
+
 /* пример инициализации слайдера */
 // if (document.querySelector('.swiper')) {
 //    const swiper = new Swiper('.swiper', {

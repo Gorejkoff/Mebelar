@@ -10,16 +10,28 @@
    margin-bottom: 45px;
    border-bottom: 1px solid #ffffff;
 
+   .form--dark & {
+      border-bottom: 1px solid #c8c8c8;
+   }
+
    input {
       width: 100%;
       font-weight: 500;
       font-size: 16px;
       line-height: 150%;
       color: #ffffff;
+
+      .form--dark & {
+         color: rgba(0, 0, 0);
+      }
    }
 
    input::placeholder {
       color: #adadad;
+
+      .form--dark & {
+         color: rgba(0, 0, 0);
+      }
    }
 }
 
@@ -44,6 +56,10 @@
       background-color: transparent;
       border: 1px solid #ffffff;
 
+      .form--dark & {
+         border: 1px solid #c8c8c8;
+      }
+
       svg {
          width: 80%;
          height: 80%;
@@ -58,6 +74,10 @@
 
    input:checked+.input-checkbox__check {
       background-color: #ffffff;
+
+      .form--dark & {
+         background-color: #c8c8c8;
+      }
 
       svg {
          opacity: 1;

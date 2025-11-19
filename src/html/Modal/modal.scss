@@ -1,4 +1,5 @@
 @use '../../scss/assets/variablesSCSS.scss' as *;
+@use '../../scss/assets/mixin.scss' as *;
 
 .modal {
    --height-modal: var(--vh, 100vh);
@@ -27,12 +28,44 @@
       }
    }
 
+   &__close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+      width: 24px;
+      min-width: 24px;
+      height: 24px;
+      opacity: 0.5;
+
+      @media (min-width:768px) {
+         width: 32px;
+         min-width: 32px;
+         height: 32px;
+      }
+
+      .modal--connection & {
+         svg {
+            path {
+               @media (max-width:767.98px) {
+                  fill: #ffffff;
+               }
+            }
+         }
+      }
+   }
+
    &__container {
-      padding-top: var(--height-header);
-      padding-bottom: var(--height-header);
+      padding-top: 24px;
+      padding-bottom: 24px;
       min-height: var(--height-modal);
       display: flex;
-      align-items: flex-start;
+      align-items: center;
+
+      .modal--search & {
+         align-items: flex-start;
+         padding-top: var(--height-header);
+      }
 
       // @media (max-width:767.98px) {
       //    padding: 0;
@@ -40,11 +73,16 @@
    }
 
    &__body {
-      padding: 30px 16px 20px;
       position: relative;
       margin: 0 auto;
       width: 100%;
       background-color: var(--color-white);
+
+   }
+
+   &__padding {
+      position: relative;
+      padding: 30px 16px 20px;
 
       @media (min-width:768px) {
          padding: 40px;
@@ -71,21 +109,96 @@
       }
    }
 
-   &__close {
-      position: relative;
-      width: 24px;
-      min-width: 24px;
-      height: 24px;
-      transform: translate(10px, -10px);
+
+
+   &__contact {
+      display: flex;
+      flex-direction: column;
 
       @media (min-width:768px) {
-         width: 32px;
-         min-width: 32px;
-         height: 32px;
-         transform: translate(30px, -30px);
+         flex-direction: row;
       }
    }
+
+   &__form {
+      padding: 32px 16px;
+
+      @media (min-width:768px) {
+         padding: 32px;
+      }
+
+      @media (min-width:1024px) {
+         padding: 32px 48px;
+         flex: 1 1 auto;
+      }
+   }
+
+   &__banner {
+      padding: 78px 26px;
+      position: relative;
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+      @media (min-width:768px) {
+         padding: 32px;
+      }
+
+      @media (min-width:1024px) {
+         padding: 48px;
+         flex: 0 0 48.6%;
+      }
+
+      img {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__banner-content {
+      position: relative;
+      z-index: 2;
+      color: #ffffff;
+      max-width: 410px;
+      font-size: 32px;
+      @include size_adaptive (font-size, 32, 42, 768, 1024);
+
+      @media (min-width:1024px) {
+         font-size: 42px;
+      }
+   }
+
+   &__banner-title {
+      margin-bottom: 7px;
+      font-weight: 700;
+   }
+
+   &__banner-text {
+      margin-bottom: 11px;
+      font-weight: 300;
+      font-size: 18px;
+
+      @media (min-width:768px) {
+         margin-bottom: 24px;
+      }
+
+      @media (min-width:1024px) {
+         margin-bottom: 35px;
+      }
+   }
+
+   &__banner-number {
+      font-weight: 700;
+   }
 }
+
 
 
 .js-modal-hidden {

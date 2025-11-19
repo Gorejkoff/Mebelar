@@ -1,0 +1,14 @@
+<div class="slider-wide">
+   <div class="slider-wide__body">
+
+      <div class="slider-wide__swiper swiper">
+         <div class="swiper-wrapper">
+            @@loop('./Swiper-Wide-Slider.html','json/lists/swiper-wide.json')
+            @@loop('./Swiper-Wide-Slider.html','json/lists/swiper-wide.json')
+         </div>
+         <div class="slider-wide__buttons">
+            @@include('../UI/Button-Swiper/Button-Swiper.html',{})
+         </div>
+      </div>
+   </div>
+</div>

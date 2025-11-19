@@ -1,0 +1,37 @@
+.slider-wide {
+
+   &__body {}
+
+   &__swiper {}
+
+   &__slide {
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 71.4%;
+
+      img {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      --color: #000000;
+   }
+}
+
+.swiper {
+   overflow: hidden;
+}
+
+.swiper-wrapper {}
+
+.swiper-slide {}

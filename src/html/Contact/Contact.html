@@ -1,10 +1,14 @@
 <section class="contact padding-section">
    <div class="container">
-      <img class="contact__background" src="@img/webp/img-2.webp" alt="фон" aria-hidden="true">
+      <img class="contact__background" src="@img/@@image" alt="фон" aria-hidden="true">
       <div class="contact__body">
          @@include('./Contact-Content.html',{})
          <div class="contact__form">
-            @@include('../UI/Form/Form.html',{})
+            @@include('../UI/Form/Form.html',{
+            classButton:'button-white',
+            typeButton: 'submit',
+            textButton:'Отправить'
+            })
          </div>
       </div>
    </div>
