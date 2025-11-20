@@ -1,6 +1,7 @@
 @use '../../scss/assets/variablesSCSS.scss' as *;
 
 .card-production {
+   position: relative;
    overflow: hidden;
 
    &__container {}

@@ -1,0 +1,168 @@
+<section class="order-table padding-section-bottom ">
+   <div class="order-table__container">
+
+      @@include('../UI/Page-Title/Page-Title.html',{
+      title:'Корзина'
+      })
+
+
+      <div class="order-table__grid">
+
+         <div class="order-table__thead">
+            <div class="order-table__td">Фото</div>
+            <div class="order-table__td">Коллекция</div>
+            <div class="order-table__td">Артикул</div>
+            <div class="order-table__td">Описание</div>
+            <div class="order-table__td">Отделка</div>
+            <div class="order-table__td">Вес</div>
+            <div class="order-table__td">Объем</div>
+            <div class="order-table__td">№ приложения</div>
+            <div class="order-table__td">Статус</div>
+            <div class="order-table__td">Цена</div>
+            <div class="order-table__td">Количество</div>
+            <div class="order-table__td">Стоимость</div>
+            <div class="order-table__td">Удалить</div>
+         </div>
+
+         <div class="order-table__tr">
+            <div class="order-table__mobile">
+               <div class="order-table__mobile-images">
+                  <div class="order-table__photo" data-da=".photo,0,1024,min">
+                     <div class="order-table__photo-shell">
+                        <img src="@img/jpg/image-1.jpg" alt="стол">
+                     </div>
+                  </div>
+                  <div class="order-table__decor" data-da=".decor,0,1024,min">
+                     <img src="@img/jpg/decor-1.jpg" alt="декор">
+                  </div>
+               </div>
+               <div class="order-table__data">
+                  <div class="order-table__props-title">
+                     <span data-da=".collection,0,1024,min">Mono</span>
+                     <span data-da=".article,0,1024,min">MNRD147</span>
+                  </div>
+                  <div class="order-table__name">
+                     <span data-da=".name,0,1024,min">Стол 138х68х75см (стандартная лицевая панель)</span>
+                  </div>
+                  <div class="order-table__props">
+                     <div>
+                        <div class="order-table__props-title">Вес</div>
+                        <div data-da=".weight,0,1024,min">30.6</div>
+                     </div>
+                     <div>
+                        <div class="order-table__props-title">Объем</div>
+                        <div data-da=".size,0,1024,min">0.072</div>
+                     </div>
+                     <div>
+                        <div class="order-table__props-title">Цена</div>
+                        <div data-da=".price,0,1024,min">6 500</div>
+                     </div>
+                  </div>
+                  <div class="order-table__price">
+                     <div>
+                        <form name="count">
+                           @@include('../UI/Counter/Counter.html',{})
+                        </form>
+                     </div>
+                     <div class="text-bold">
+                        <div class="order-table__props-title">Стоимость</div>
+                        <div data-da=".cost,0,1024,min">6 500</div>
+                     </div>
+                  </div>
+                  <button type="button" class="order-table__remove" data-da=".remove,0,1024,min">
+                     <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.94979 7.364L0.292968 13.0208C-0.0975555 13.4113 -0.0975559 14.0445 0.292968 14.435C0.683493 14.8256 1.31666 14.8256 1.70718 14.435L7.364 8.77821L13.0208 14.435C13.4113 14.8256 14.0445 14.8256 14.435 14.435C14.8256 14.0445 14.8256 13.4113 14.435 13.0208L8.77821 7.364L14.4351 1.70711C14.8256 1.31658 14.8256 0.683419 14.4351 0.292895C14.0446 -0.0976296 13.4114 -0.0976297 13.0209 0.292895L7.364 5.94979L1.70711 0.292893Z" fill="black" />
+                     </svg>
+                  </button>
+               </div>
+            </div>
+
+            <div class="order-table__td photo "></div>
+            <div class="order-table__td collection"></div>
+            <div class="order-table__td article"></div>
+            <div class="order-table__td name"></div>
+            <div class="order-table__td decor"></div>
+            <div class="order-table__td weight"></div>
+            <div class="order-table__td size"></div>
+            <div class="order-table__td apps"></div>
+            <div class="order-table__td status"></div>
+            <div class="order-table__td price text-bold"></div>
+            <div class="order-table__td qantity"></div>
+            <div class="order-table__td cost text-bold"></div>
+            <div class="order-table__td remove"></div>
+         </div>
+         <div class="order-table__tr">
+            <div class="order-table__mobile">
+               <div class="order-table__mobile-images">
+                  <div class="order-table__photo" data-da=".photo,0,1024,min">
+                     <div class="order-table__photo-shell">
+                        <img src="@img/jpg/image-1.jpg" alt="стол">
+                     </div>
+                  </div>
+                  <div class="order-table__decor" data-da=".decor,0,1024,min">
+                     <img src="@img/jpg/decor-1.jpg" alt="декор">
+                  </div>
+               </div>
+               <div class="order-table__data">
+                  <div class="order-table__props-title">
+                     <span data-da=".collection,0,1024,min">Mono</span>
+                     <span data-da=".article,0,1024,min">MNRD147</span>
+                  </div>
+                  <div class="order-table__name">
+                     <span data-da=".name,0,1024,min">Стол 138х68х75см (стандартная лицевая панель)</span>
+                  </div>
+                  <div class="order-table__props">
+                     <div>
+                        <div class="order-table__props-title">Вес</div>
+                        <div data-da=".weight,0,1024,min">30.6</div>
+                     </div>
+                     <div>
+                        <div class="order-table__props-title">Объем</div>
+                        <div data-da=".size,0,1024,min">0.072</div>
+                     </div>
+                     <div>
+                        <div class="order-table__props-title">Цена</div>
+                        <div data-da=".price,0,1024,min">6 500</div>
+                     </div>
+                  </div>
+                  <div class="order-table__price">
+                     <div>
+                        <form name="count">
+                           @@include('../UI/Counter/Counter.html',{})
+                        </form>
+                     </div>
+                     <div class="text-bold">
+                        <div class="order-table__props-title">Стоимость</div>
+                        <div data-da=".cost,0,1024,min">6 500</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="order-table__td photo "></div>
+            <div class="order-table__td collection"></div>
+            <div class="order-table__td article"></div>
+            <div class="order-table__td name"></div>
+            <div class="order-table__td decor"></div>
+            <div class="order-table__td weight"></div>
+            <div class="order-table__td size"></div>
+            <div class="order-table__td apps"></div>
+            <div class="order-table__td status"></div>
+            <div class="order-table__td price text-bold"></div>
+            <div class="order-table__td qantity"></div>
+            <div class="order-table__td cost text-bold"></div>
+            <div class="order-table__td">
+               <button type="button" class="order-table__remove">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.94979 7.364L0.292968 13.0208C-0.0975555 13.4113 -0.0975559 14.0445 0.292968 14.435C0.683493 14.8256 1.31666 14.8256 1.70718 14.435L7.364 8.77821L13.0208 14.435C13.4113 14.8256 14.0445 14.8256 14.435 14.435C14.8256 14.0445 14.8256 13.4113 14.435 13.0208L8.77821 7.364L14.4351 1.70711C14.8256 1.31658 14.8256 0.683419 14.4351 0.292895C14.0446 -0.0976296 13.4114 -0.0976297 13.0209 0.292895L7.364 5.94979L1.70711 0.292893Z" fill="black" />
+                  </svg>
+               </button>
+            </div>
+         </div>
+
+
+      </div>
+
+
+   </div>
+</section>

@@ -103,12 +103,43 @@ body {
    }
 }
 
+.contour {
+
+   &__center,
+   &__top-left {
+      display: none;
+      position: absolute;
+
+
+      @media (min-width:768px) {
+         display: block;
+      }
+
+
+   }
+
+   &__top-left {
+      left: 0;
+      top: -30px;
+
+      .card-production & {
+         top: 50px;
+      }
+   }
+
+   &__center {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50px);
+   }
+}
+
 .grid {
    display: grid;
    gap: 20px;
    grid-template-columns: 1fr;
 
-   .column-3 {
+   &.column-3 {
       --column: 3;
    }
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   @@include('html/1_head.html',{
+   "title":"Mebelar News"
+   })
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/2_header.html',{})
+
+      <div class="main">
+
+         <div class="container">
+            @@include('html/UI/Bread-Crumbs/Bread-Crumbs.html',{
+            "list":[{"name": "Главная", "link": "index.html"}, {"name": "Новости", "link": "news.html"}],
+            "border": true
+            })
+         </div>
+
+         <section class="news padding-section-bottom">
+            <div class="news__container">
+               @@include('html/UI/Page-Title/Page-Title.html',{title:'Новости'})
+               <div class="grid column-3">
+                  @@loop('html/UI/Cards/Card-News/Card-News.html', 'json/lists/news.json')
+
+               </div>
+               @@include('html/UI/Pagination-Page/Pagination-Page.html',{})
+            </div>
+         </section>
+
+
+      </div>
+
+      @@include('html/4_footer.html',{})
+
+   </div>
+
+   @@include('html/Mobile-Menu/Mobile-Menu.html',{})
+   @@include('html/Modal/Search.html',{})
+
+   @@include('html/3_scripts.html',{
+   })
+
+
+</body>
+
+</html>

@@ -22,7 +22,7 @@
       opacity: 0.7;
    }
 
-   &:hover {
+   ._pc &:hover {
       background-color: var(--button-background, #0a6c87);
    }
 
@@ -38,7 +38,7 @@
       border: 1px solid #ffffff;
       --button-color: #000000;
 
-      &:hover {
+      ._pc &:hover {
          --button-background: transparent;
       }
    }
@@ -48,7 +48,7 @@
       border: 1px solid #ffffff;
       --button-color: #ffffff;
 
-      &:hover {
+      ._pc &:hover {
          --button-color: #000000;
          --button-background: #ffffff;
       }
@@ -59,7 +59,7 @@
       border: 1px solid #004A5E;
       --button-color: #004A5E;
 
-      &:hover {
+      ._pc &:hover {
          --button-color: #ffffff;
          --button-background: #004A5E;
       }

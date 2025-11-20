@@ -1,3 +1,5 @@
+@use '../../../scss/assets/variablesSCSS.scss' as *;
+
 .button-swiper__body {
    display: flex;
    align-items: center;
@@ -13,12 +15,23 @@
    width: var(--size);
    min-width: var(--size);
    border: 1px solid var(--color, #ffffff);
+   transition: background-color $tr-time, border-color $tr-time;
 
    svg {
       width: calc(var(--size) / 2);
 
       path {
          fill: var(--color, #ffffff);
+         transition: fill $tr-time;
+      }
+   }
+
+   &:hover {
+      background-color: #004A5E;
+      --color: #004A5E;
+
+      svg {
+         --color: #ffffff;
       }
    }
 }

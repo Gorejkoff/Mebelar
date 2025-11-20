@@ -10,6 +10,12 @@
    background-color: #ffffff;
    font-size: 16px;
 
+   .design-table__grid & {
+      padding: 0;
+      border: none;
+      min-width: 15px;
+   }
+
    button {
       display: flex;
       align-items: center;

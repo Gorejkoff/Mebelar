@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-   @@include('html/1_head.html',{"title":"Mebelar Catalog"})
+   @@include('html/1_head.html',{
+   "title":"Mebelar News Item"
+   })
 </head>
 
 
@@ -13,16 +15,16 @@
       @@include('html/2_header.html',{})
 
       <div class="main">
+
          <div class="container">
             @@include('html/UI/Bread-Crumbs/Bread-Crumbs.html',{
-            "list":[{"name": "Главная", "link": "index.html"}, {"name": "Каталог", "link": "catalog.html"}],
+            "list":[{"name": "Главная", "link": "index.html"}, {"name": "Новости", "link": "news.html"},{"name": "Умная мебель для современной жизни: диваны-кровати, меняющие правила игры", "link": "news-item.html"}],
             "border": true
             })
          </div>
 
-         @@include('html/Catalog/Catalog.html',{})
+         @@include('html/News-Item/News-Item.html',{})
 
-         @@include('html/Contact/Contact.html',{image:'webp/img-2.webp'})
 
       </div>
 
@@ -34,7 +36,6 @@
    @@include('html/Modal/Search.html',{})
 
    @@include('html/3_scripts.html',{
-   swiper: false,
    })
 
 

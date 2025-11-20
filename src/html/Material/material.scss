@@ -1,9 +1,15 @@
 .material {
+   position: relative;
    background-color: #F0F0F0;
 
    &__body {
       border-bottom: 1px solid #d3d3d3;
       background-color: #F0F0F0;
+
+      &>* {
+         position: relative;
+         z-index: 1;
+      }
    }
 
    &__button {
