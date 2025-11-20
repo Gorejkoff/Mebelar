@@ -17,7 +17,10 @@
 
       <div class="main">
 
-         @@include('html/Card-Product/Card-Product.html',{})
+         @@include('html/Card-Product/Card-Product.html',{
+         buttonText:'Техническая информация',
+         attr:'data-modal_open="technical_information"'
+         })
 
          @@include('html/Material/Material.html',{})
 
@@ -27,6 +30,7 @@
 
    </div>
 
+   @@include('html/Modal/Technical-Information.html',{})
    @@include('html/Modal/Connection.html',{})
    @@include('html/Mobile-Menu/Mobile-Menu.html',{})
    @@include('html/Modal/Search.html',{})

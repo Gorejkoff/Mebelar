@@ -7,7 +7,9 @@
       class: 'no-grid',
       })
 
-      @@loop('../UI/Numbered-List/Numbered-List-Item.html','json/lists/numbered-list.json')
+      <ol class="js-tabs-group">
+         @@loop('../UI/Numbered-List/Numbered-List-Item.html','json/lists/numbered-list.json')
+      </ol>
 
       <ol class="portfolio__button">
          @@include('../UI/Button/Button.html',{

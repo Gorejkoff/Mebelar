@@ -1,5 +1,5 @@
-<li class="numbered-list js-tabs-body js-tabs-closing">
-   <div class="numbered-list__body js-tabs-toggle">
+<li class="numbered-list js-tabs-body">
+   <div class="numbered-list__body js-tabs-click">
       <div class="numbered-list__number"></div>
       <div class="numbered-list__content">
          <div class="numbered-list__title">@@title</div>
@@ -16,7 +16,10 @@
    <div class="js-tabs-shell">
       <div class="numbered-list__info js-tabs-inner">
          <div class="numbered-list__info-content">
-            <img src="@img/@@image" alt="фото проекта">
+            <picture>
+               <source srcset="@img/@@image" type="image/webp" media="(min-width:768px)">
+               <img src="@img/@@image-m" alt="фото проекта">
+            </picture>
          </div>
       </div>
    </div>

@@ -3,31 +3,36 @@
       "title": "Северсталь",
       "text": "Офис компании в Томске",
       "image": "webp/img-14.webp",
-      "open": true
+      "image-m": "webp/img-14-1.webp"
    },
    {
       "title": "Газпром",
       "text": "Офис компании в Москве",
-      "image": "webp/img-14.webp"
+      "image": "webp/img-14.webp",
+      "image-m": "webp/img-14-1.webp"
    },
    {
       "title": "Согаз",
       "text": "Офис компании в Москве",
-      "image": "webp/img-14.webp"
+      "image": "webp/img-14.webp",
+      "image-m": "webp/img-14-1.webp"
    },
    {
       "title": "Яндекс",
       "text": "Офис компании в Санкт Петербурге",
-      "image": "webp/img-14.webp"
+      "image": "webp/img-14.webp",
+      "image-m": "webp/img-14-1.webp"
    },
    {
       "title": "Росатом",
       "text": "Офис компании в Санкт Петербурге",
-      "image": "webp/img-14.webp"
+      "image": "webp/img-14.webp",
+      "image-m": "webp/img-14-1.webp"
    },
    {
       "title": "Росатом",
       "text": "Офис компании в Красноярске",
-      "image": "webp/img-14.webp"
+      "image": "webp/img-14.webp",
+      "image-m": "webp/img-14-1.webp"
    }
 ]

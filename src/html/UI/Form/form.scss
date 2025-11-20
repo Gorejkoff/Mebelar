@@ -41,6 +41,7 @@
    display: flex;
    gap: 12px;
    font-size: 14px;
+   transform: translateZ(0);
 
    input {
       display: none;
@@ -61,6 +62,7 @@
       }
 
       svg {
+         will-change: opacity;
          width: 80%;
          height: 80%;
          opacity: 0;

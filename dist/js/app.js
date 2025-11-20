@@ -502,6 +502,7 @@ if (document.querySelector('.slider-wide__swiper')) {
 // js-tabs-hover - работает hover на ПК, отключает клик на ПК, для touchscreen надо раставить js-tabs-click или js-tabs-toggle
 // js-tabs-closing - вместе с js-tabs-bod закрыть вкладку при событии вне данной вкладки
 // js-tabs-click - открыть при клике (зона клика)
+// js-tabs-group - обвернуть группу табов, что бы был открыт только один из группы
 // js-tabs-toggle - открыть или закрыть при клике (зона клика)
 // js-tabs-shell - оболочка скрывающая js-tabs-inner
 // js-tabs-inner - оболочка контента
@@ -528,9 +529,25 @@ class Tabs {
    eventClick = (event) => {
       if (isPC && event.target.closest('.js-tabs-hover')) return;
       this.closeAll(event);
-      if (event.target.closest('.js-tabs-click')) this.openTabs(event.target);
-      if (event.target.closest('.js-tabs-toggle')) this.toggleTabs(event.target);
+
+      if (event.target.closest('.js-tabs-click')) {
+         this.closeGroup(event);
+         this.openTabs(event.target)
+      };
+      if (event.target.closest('.js-tabs-toggle')) {
+         this.closeGroup(event);
+         this.toggleTabs(event.target)
+      };
    };
+   closeGroup = (event) => {
+      if (event.target.closest('.js-tabs-group')) {
+         const group = event.target.closest('.js-tabs-group').querySelectorAll('.js-tabs-body');
+         group.forEach((e) => {
+            if (event.target.closest('.js-tabs-toggle') && event.target.closest('.js-tabs-toggle') == (e.querySelector('.js-tabs-toggle') || e.closest('.js-tabs-toggle'))) return;
+            this.closeTabs(e)
+         })
+      }
+   }
    openTabs = (element) => {
       const body = element.closest('.js-tabs-body');
       if (!body) return;

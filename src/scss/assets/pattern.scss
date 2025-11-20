@@ -297,8 +297,19 @@ body {
    transition: height $tr-time-l ease;
 }
 
+.js-tabs-click,
 .js-tabs-toggle {
    cursor: pointer;
+}
+
+.js-tabs-group {
+   .js-tabs-open {
+
+      .js-tabs-click,
+      .js-tabs-toggle {
+         cursor: auto;
+      }
+   }
 }
 
 // /* указатель количества, абсолютное позиционирование */

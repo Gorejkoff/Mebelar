@@ -19,7 +19,7 @@
          &::before {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -1px;
             left: 0;
             width: 100%;
             height: 5px;
@@ -62,7 +62,8 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      column-gap: 30px;
+      column-gap: 20px;
+
    }
 
    &__link {
@@ -88,13 +89,22 @@
       display: flex;
       align-items: center;
       gap: 4px;
+      width: 100%;
+   }
+
+   &__nav-menu-button-arrow {
+      transition: transform $tr-time;
+
+      .js-tabs-open & {
+         transform: rotate3d(1, 0, 0, 180deg);
+      }
    }
 
    &__nav-menu-body {
 
       ol,
       ul {
-         padding: 16px;
+         padding: 8px 16px;
          background-color: #ffffff;
          font-size: 14px;
          letter-spacing: -0.01em;
@@ -102,10 +112,13 @@
 
          li {
             &:not(:last-child) {
-               margin-bottom: 20px;
+               margin-bottom: 4px;
             }
 
             a {
+               display: block;
+               padding-top: 8px;
+               padding-bottom: 8px;
                transition: text-shadow $tr-time;
             }
 
