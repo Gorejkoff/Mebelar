@@ -14,8 +14,8 @@ if (document.getElementById('map')) {
             }
          }
       );
-
       map.addChild(new YMapDefaultSchemeLayer());
+
       document.addEventListener('click', (event) => {
          if (event.target.closest('.contacts__cell-button')) {
             const coordinates = event.target.closest('.contacts__cell-button').dataset.map;
