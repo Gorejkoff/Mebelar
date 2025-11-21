@@ -3425,6 +3425,13 @@ body {
     margin-bottom: 26px;
   }
 
+  .contacts__body {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
   .page-title h1 {
     font-size: 64px;
   }
