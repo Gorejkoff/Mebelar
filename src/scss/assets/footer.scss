@@ -32,6 +32,16 @@
          text-align: left;
          flex: 1 1 1%;
       }
+
+      svg,
+      img {
+         max-width: 140px;
+         width: 100%;
+
+         @media (min-width:768px) {
+            max-width: 200px;
+         }
+      }
    }
 
    &__title-section {

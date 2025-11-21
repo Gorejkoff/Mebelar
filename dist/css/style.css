@@ -457,10 +457,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  max-width: 200px;
 }
 
+.header__logo svg,
 .header__logo img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 130px;
 }
 
 .header__nav {
@@ -583,6 +586,12 @@ body {
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
   text-align: center;
+}
+
+.footer__logo svg,
+.footer__logo img {
+  max-width: 140px;
+  width: 100%;
 }
 
 .footer__title-section {
@@ -1065,12 +1074,13 @@ body {
   margin-bottom: 11px;
   font-weight: 700;
   font-size: 16px;
+  line-height: 125%;
 }
 
 .advantages__text {
   font-weight: 300;
   font-size: 14px;
-  line-height: 171%;
+  line-height: 143%;
   opacity: 0.7;
 }
 
@@ -3063,9 +3073,19 @@ body {
     min-height: 100px;
   }
 
+  .header__logo svg,
+  .header__logo img {
+    max-width: 200px;
+  }
+
   .footer__body {
     padding-top: 60px;
     padding-bottom: 40px;
+  }
+
+  .footer__logo svg,
+  .footer__logo img {
+    max-width: 200px;
   }
 
   .footer__bottom-container {
@@ -3107,6 +3127,10 @@ body {
 
   .aboute-us__cell-img {
     padding-bottom: 135.438%;
+  }
+
+  .advantages__text {
+    line-height: 171%;
   }
 
   .portfolio__button {

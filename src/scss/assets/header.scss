@@ -52,9 +52,16 @@
    &__logo {
       display: flex;
       align-items: center;
+      max-width: 200px;
 
+      svg,
       img {
-         max-width: 100%;
+         width: 100%;
+         max-width: 130px;
+
+         @media (min-width:768px) {
+            max-width: 200px;
+         }
       }
    }
 
