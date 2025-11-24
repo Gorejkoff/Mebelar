@@ -1,0 +1,97 @@
+.download {
+
+   &__body {}
+
+   &__tab {
+      border-bottom: 1px solid #d3d3d3;
+
+      &.js-tabs-open {
+         .download__tab-button {
+            svg {
+               transform: rotate3d(1, 0, 0, 180deg);
+            }
+         }
+      }
+   }
+
+   &__tab-inner {
+      padding-bottom: 20px;
+   }
+
+   &__tab-button {
+      padding-top: 24px;
+      padding-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 600;
+      font-size: px;
+
+      @media (min-width:768px) {
+         font-size: 20px;
+      }
+
+      svg {
+         transition: transform 0.3s;
+      }
+   }
+
+
+   &__subtab {
+      @media (min-width:768px) {
+         margin-left: 20px;
+      }
+
+      &.js-tabs-open {
+         .download__subtab-button {
+            svg {
+               transform: rotate3d(1, 0, 0, 180deg);
+            }
+         }
+      }
+   }
+
+   &__subtab-button {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 500;
+      font-size: 14px;
+
+      @media (min-width:768px) {
+         font-size: 16px;
+      }
+
+      svg {
+         transition: transform 0.3s;
+      }
+   }
+
+   &__list {
+      @media (min-width:768px) {
+         margin-left: 20px;
+      }
+   }
+
+   &__list-item {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      display: flex;
+      gap: 10px;
+      max-width: 500px;
+      font-weight: 400;
+      font-size: 13px;
+      color: #004A5E;
+      border-bottom: 1px solid #d3d3d3;
+
+      @media (min-width:768px) {
+         font-size: 14px;
+      }
+   }
+
+   &__list-text {
+      flex: 1 1 auto;
+   }
+}

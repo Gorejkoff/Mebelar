@@ -56,13 +56,19 @@ document.documentElement.addEventListener("click", (event) => {
 
 // отключение кнопки в выборе материалов
 if (document.querySelector('.js-material-select')) {
-   function checkingButtonsRadio(list, button) {
-      const test = list.find(e => e.checked);
-      if (!test) {
-         disableButtonMaterial(button)
-         return;
-      }
-      enablingButtonMaterial(button)
+   const list = document.querySelectorAll('.js-material-select');
+   function checkingButtonsRadio() {
+      list.forEach(e => {
+         const buttonSubmit = e.querySelector('.js-order-material-button')
+         const listRadioButton = Array.from(e.querySelectorAll('[type="radio"]'));
+         const test = listRadioButton.find(e => e.checked);
+         if (!test) {
+            disableButtonMaterial(buttonSubmit)
+            return;
+         }
+         enablingButtonMaterial(buttonSubmit)
+      })
+
    }
    function disableButtonMaterial(button) {
       button.setAttribute('disabled', 'true')
@@ -70,14 +76,11 @@ if (document.querySelector('.js-material-select')) {
    function enablingButtonMaterial(button) {
       button.removeAttribute('disabled')
    }
-   const list = document.querySelectorAll('.js-material-select');
+   checkingButtonsRadio()
    list.forEach((element) => {
-      const buttonSubmit = element.querySelector('.js-order-material-button')
-      const listRadioButton = Array.from(element.querySelectorAll('[type="radio"]'));
-      checkingButtonsRadio(listRadioButton, buttonSubmit)
       element.addEventListener('change', (event) => {
          if (event.target.type === 'radio') {
-            checkingButtonsRadio(listRadioButton, buttonSubmit)
+            checkingButtonsRadio()
          }
       })
    })
@@ -107,3 +110,28 @@ if (document.querySelector('.banner-video video')) {
    target.forEach(event => observer.observe(event));
 }
 
+
+if (document.querySelector('.search__input')) {
+   const input = document.querySelector('.search__input');
+   const result = document.querySelector('.search__result');
+   function openResult() {
+      result.classList.add('active');
+   }
+   function closeResult() {
+      result.classList.remove('active');
+   }
+   input.addEventListener('input', (event) => {
+      input.value = input.value.trim()
+      if (input.value.length > 0) { openResult() }
+      if (input.value.length == 0) { closeResult() }
+   })
+   document.body.addEventListener('click', (event) => {
+      if (event.target.closest('.search__clear')) {
+         input.value = '';
+         closeResult();
+      }
+      if (event.target.closest('.search__result-item')) {
+         closeResult();
+      }
+   })
+}

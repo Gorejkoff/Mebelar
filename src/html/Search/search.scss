@@ -1,0 +1,136 @@
+.search {
+   &__container {}
+
+   &__body {
+      margin-top: 30px;
+      position: relative;
+   }
+
+   &__title {
+      margin-bottom: 10px;
+      font-family: var(--font-family-title);
+      font-size: 24px;
+      letter-spacing: -0.01em;
+      line-height: 132%;
+
+      @media (min-width:768px) {
+         font-size: 44px;
+      }
+
+      @media (min-width:1024px) {
+         font-size: 64px;
+      }
+   }
+
+   &__info {}
+
+   &__input-body {
+      position: relative;
+   }
+
+   &__input {
+      padding: 15px 50px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      width: 100%;
+      background-color: #F0F0F0;
+   }
+
+   &__init,
+   &__clear {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   &__init {
+      left: 16px;
+
+      img,
+      svg {
+         width: 100%;
+      }
+
+   }
+
+   &__clear {
+      right: 16px;
+
+      img,
+      svg {
+         width: 50%;
+      }
+   }
+
+   &__result {
+      display: none;
+      position: absolute;
+      top: calc(100% + 3px);
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      padding: 34px;
+      background-color: #F0F0F0;
+
+      &.active {
+         display: block;
+      }
+   }
+
+   &__result-list {
+      max-height: 230px;
+      overflow-y: auto;
+
+   }
+
+   &__result-item {
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+
+      &:hover {
+         background-color: #ffffff;
+
+         .search__result-arrow {
+            background-color: #004A5E;
+
+            svg {
+               path {
+                  fill: #ffffff
+               }
+            }
+         }
+      }
+   }
+
+   &__result-arrow {
+      width: 30px;
+      min-width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+
+      svg {
+         path {
+            transition: fill 0.3s;
+         }
+      }
+   }
+
+   &__display {
+      margin-top: 30px;
+   }
+}

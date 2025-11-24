@@ -10,7 +10,6 @@
    width: 100vw;
    height: var(--height-modal);
    background-color: rgba(0, 0, 0, 0.4);
-   // scrollbar-gutter: stable;
    overflow-y: auto;
    overflow-x: hidden;
    transition: right $tr-time-l;
@@ -70,6 +69,10 @@
       // @media (max-width:767.98px) {
       //    padding: 0;
       // }
+   }
+
+   &__technical-information {
+      background-color: #ffffff;
    }
 
    &__body {

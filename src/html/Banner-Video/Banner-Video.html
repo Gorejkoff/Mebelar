@@ -4,23 +4,25 @@
    <div class="banner-video__container">
       <div class="banner-video__content">
          <div class="banner-video__info">
-            <h2 class="banner-video__title">Производство</h2>
+            <h2 class="banner-video__title">@@title</h2>
             <div class="banner-video__text">
-               <p>Мы создаём мебель на собственном производстве, где сочетаются современное оборудование и ручная работа мастеров. Каждый этап — от подбора материалов до финальной отделки — проходит строгий контроль качества.</p>
-               <p>Благодаря этому наша мебель служит долгие годы, сохраняя эстетику и надежность.</p>
+               @@if(context.text){ @@for( var i = 0; i < context.text.length; i++ ){ <p>`+context.text[i]+`</p> } }
             </div>
+            @@if(context.button){
             @@include('../UI/Button/Button.html',{
             text:'Производство',
             link:'#0',
             class:'button-white-border'
-            })
+            })}
          </div>
+         @@if(context.list){
          <ol class="banner-video__list">
             <li>Собственное производство</li>
             <li>Современные технологии</li>
             <li>Контроль качества на каждом этапе</li>
             <li>Долговечность и эстетика</li>
          </ol>
+         }
       </div>
    </div>
 </section>

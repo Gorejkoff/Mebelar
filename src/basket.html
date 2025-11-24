@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 
 <head>
    @@include('html/1_head.html',{
@@ -22,7 +22,15 @@
             })
          </div>
 
-         @@include('html/Order-Table/Order-Table.html',{})
+         @@include('html/Order-Table/Order-Table.html',{
+         title: 'Корзина',
+         order: true,
+         count: true,
+         registration: true,
+         textButton1:'Пересчитать',
+         textButton2:'Перейти к оформлению',
+         linkButton2: 'order-registration.html',
+         })
 
       </div>
 

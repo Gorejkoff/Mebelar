@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   @@include('html/1_head.html',{
+   'title':'Mebelar Order Registration'
+   })
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/2_header.html',{})
+
+      <div class="main">
+         <div class="container">
+            @@include('html/UI/Bread-Crumbs/Bread-Crumbs.html',{
+            "list":[{"name": "Главная", "link": "index.html"}, {"name": "Оформление заказа", "link": "order-registration.html"}],
+            "border": true
+            })
+         </div>
+
+         @@include('html/Order-Table/Order-Table.html',{
+         title: 'Оформление заказа',
+         textButton1:'Отправить менеджеру',
+         textButton2:'Вернуться в корзину',
+         data: true,
+         linkButton2: 'basket.html',
+         })
+
+      </div>
+
+      @@include('html/4_footer.html',{})
+
+   </div>
+
+
+   @@include('html/Mobile-Menu/Mobile-Menu.html',{})
+   @@include('html/Modal/Search.html',{})
+
+   @@include('html/3_scripts.html',{ })
+
+
+</body>
+
+</html>

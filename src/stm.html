@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   @@include('html/1_head.html',{
+   'title':'Mebelar STM',
+   fancybox: true
+   })
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/2_header.html',{})
+
+      <div class="main">
+         <div class="container">
+            @@include('html/UI/Bread-Crumbs/Bread-Crumbs.html',{
+            "list":[{"name": "Главная", "link": "index.html"}, {"name": "СТМ", "link": "stm.html"}],
+            "border": true
+            })
+         </div>
+         <div class="container">
+            @@include('html/UI/Page-Title/Page-Title.html',{
+            title: 'Собственная торговая марка',
+            text:'За последние 2 года мы увеличили площадь производства, склада сырья и комплектующих, увеличили станочный парк, дополнили штат собственным отделом прямых продаж для обслуживания контрактных клиентов и дилеров на специальных условиях. ',
+            subtext:'Новые возможности позволяют нам выполнять заказы большего объема и выпускать мебель для новых заказчиков.'
+            })
+         </div>
+         @@include('html/Assumption/Assumption.html',{})
+         @@include('html/Collections/Collections.html',{})
+         <div class="stm__slider padding-section">
+            <div class="container">
+               @@include('html/UI/Header-Grid/Header-Grid.html',{
+               title: 'Мы делаем всё — от производства до сборки',
+               class: 'no-grid',
+               removeName: true,
+               text2: 'Если у вас есть собственные сборочные команды — мы проведём обучение и инструктаж, чтобы всё соответствовало нашим стандартам качества.',
+               list2:['производство под вашим брендом', 'брендированная упаковка', 'доставка на объект', 'сборка и монтаж' ],
+               })
+            </div>
+            @@include('html/Slider-Wide/Slider-Wide.html',{})
+         </div>
+         <div class="padding-section">
+            <div class="container">
+               @@include('html/UI/Header-Grid/Header-Grid.html',{
+               title: 'Разрабатываем мебель, которая сочетает эстетику и функциональность',
+               class: 'no-grid',
+               removeName: true,
+               text2: 'Мы предлагаем производственную площадку как сервис: современное оборудование, опытную команду и гибкие условия. Вы получаете мебель под собственным брендом — без затрат на цех, персонал и логистику.',
+               })
+               @@include('html/Experience/Experience-Image.html',{})
+            </div>
+         </div>
+
+         @@include('html/Contact/Contact.html',{image:'webp/img-2.webp'})
+      </div>
+
+      @@include('html/4_footer.html',{})
+
+   </div>
+
+
+   @@include('html/Mobile-Menu/Mobile-Menu.html',{})
+   @@include('html/Modal/Search.html',{})
+
+   @@include('html/3_scripts.html',{
+   swiper: true,
+   fancybox: true
+   })
+
+
+</body>
+
+</html>

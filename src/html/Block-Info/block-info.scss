@@ -1,0 +1,97 @@
+.block-info {
+
+   &__container {}
+
+
+   &__body {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+
+      @media (min-width:768px) {
+         flex-direction: row;
+      }
+   }
+
+   &__text {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 160%;
+
+      @media (min-width:768px) {
+         font-size: 20px;
+         order: 1;
+      }
+
+      p {
+         @media (min-width:768px) {
+            max-width: 460px;
+         }
+      }
+   }
+
+   &__image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      @media (min-width:768px) {
+         order: 2;
+         flex: 0 0 50%;
+      }
+
+   }
+
+   &__counter {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      svg {
+
+         height: 40vw;
+         width: auto;
+
+         @media (min-width:768px) {
+            height: auto;
+            width: auto;
+         }
+      }
+   }
+
+   &__mask {
+      flex: 0 0 70%;
+      position: relative;
+      min-height: 110vw;
+      height: 100%;
+      width: 100%;
+      mask-position: top;
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-image: url('../img/png/mask.png');
+      overflow: hidden;
+
+      @media (min-width:768px) {
+         flex: 0 0 290px;
+         min-height: 490px;
+      }
+
+      img {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         z-index: -1;
+         transform: translate(-50%, -50%);
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+}

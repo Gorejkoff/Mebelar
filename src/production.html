@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   @@include('html/1_head.html',{
+   'title':'Mebelar Production',
+   fancybox: true
+   })
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/2_header.html',{})
+
+      <div class="main">
+         <div class="container">
+            @@include('html/UI/Bread-Crumbs/Bread-Crumbs.html',{
+            "list":[{"name": "Главная", "link": "index.html"}, {"name": "Производство", "link": "production.html"}],
+            "border": true
+            })
+         </div>
+         <div class="container">
+            @@include('html/UI/Page-Title/Page-Title.html',{
+            title: 'Производство',
+            text:'MEBELAR (ООО «Мебелар») – российский производитель офисной мебели. Более 7 лет мы эксклюзивно разрабатываем и изготавливаем коллекции мебели для ведущих брендов рынка офисной мебели - AOF Group, GDB, Tabula Sense и являемся их ключевым партнером. '
+            })
+         </div>
+         <div class="container">
+            <div class="production__banner">
+               <img src="@img/webp/img-31.webp" alt="цех производства">
+            </div>
+         </div>
+         @@include('html/Block-Info/Block-Info.html',{})
+         @@include('html/Banner-Video/Banner-Video.html',{
+         title: 'Процесс производства',
+         text:['Мы создаём мебель на собственном производстве, где сочетаются современное оборудование и ручная работа мастеров. Каждый этап — от подбора материалов до финальной отделки — проходит строгий контроль качества' ]
+         })
+         @@include('html/Block-Team/Block-Team.html',{})
+         @@include('html/Block-Department/Block-Department.html',{})
+         <div class="padding-section">
+            @@include('html/Slider-Wide/Slider-Wide.html',{})
+         </div>
+         @@include('html/Warehouse/Warehouse.html',{})
+      </div>
+
+      @@include('html/4_footer.html',{})
+
+   </div>
+
+
+   @@include('html/Mobile-Menu/Mobile-Menu.html',{})
+   @@include('html/Modal/Search.html',{})
+
+   @@include('html/3_scripts.html',{
+   swiper: true,
+   fancybox: true
+   })
+
+
+</body>
+
+</html>

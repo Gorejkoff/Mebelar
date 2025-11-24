@@ -32,10 +32,10 @@
       }
    }
 
-   p {
+   &__text {
       flex: 0 0 50%;
       font-weight: 300;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 132%;
 
       @media (min-width:768px) {
@@ -44,6 +44,17 @@
 
       @media (min-width:1100px) {
          margin-top: 20px;
+      }
+   }
+
+   &__subtext {
+      margin-top: 8px;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 125%;
+
+      @media (min-width:768px) {
+         margin-top: 16px;
       }
    }
 }

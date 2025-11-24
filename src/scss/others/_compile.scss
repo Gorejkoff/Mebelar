@@ -11,7 +11,6 @@
 @use '../../html/Modal/modal';
 @use '../../html/Decor/decor';
 @use '../../html/Material/material';
-@use '../../html/UI/Counter/counter';
 @use '../../html/Portfolio-Gallery/portfolio-gallery';
 @use '../../html/Project/project';
 @use '../../html/Slider-Wide/slider-wide';
@@ -19,7 +18,22 @@
 @use '../../html/Catalog/catalog';
 @use '../../html/Order-Table/order-table';
 @use '../../html/News-Item/news-item';
+@use '../../html/Orders/orders';
+@use '../../html/Slider/swiper-block';
+@use '../../html/Card-Product/card-product';
+@use '../../html/Card-Product-Info/card-product-info';
+@use '../../html/Download/download';
+@use '../../html/Search/search';
+@use '../../html/Production/production';
+@use '../../html/Block-Info/block-info';
+@use '../../html/Block-Team/block-team';
+@use '../../html/Block-Department/block-department';
+@use '../../html/Warehouse/warehouse';
+@use '../../html/STM/stm';
+@use '../../html/Collections/collections';
+@use '../../html/Assumption/assumption';
 
+@use '../../html/UI/Counter/counter';
 @use '../../html/UI/Page-Title/page-title';
 @use '../../html/UI/Button/button';
 @use '../../html/UI/Bread-Crumbs/bread-crumbs';
@@ -32,6 +46,3 @@
 @use '../../html/UI/Cards/Card-News/card-news';
 @use '../../html/UI/Pagination-Page/pagination-page';
 @use '../../html/UI/Filter/filter';
-@use '../../html/Slider/swiper-block';
-@use '../../html/Card-Product/card-product';
-@use '../../html/Card-Product-Info/card-product-info';

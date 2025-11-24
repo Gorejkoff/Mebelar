@@ -1,0 +1,38 @@
+<div class="order-table__result">
+   @@if(context.data !== 'true'){<div class="hidden-max768"></div>}
+   @@if(context.data == 'true'){<form name="" class="order-table__user-data">
+      <input type="text" name="" placeholder="Дополнительная почта к заказу">
+      <textarea name="" placeholder="Комментарий к заказу"></textarea>
+   </form>}
+
+   <div class="order-table__result-body">
+      <div class="order-table__result-border">
+         <div class="order-table__result-row">
+            <div>Общий вес</div>
+            <div>196.7 кг</div>
+         </div>
+         <div class="order-table__result-row">
+            <div>Объем</div>
+            <div>0.58 м3</div>
+         </div>
+      </div>
+      <div class="order-table__result-price">
+         <div class="order-table__result-name">Итого</div>
+         <div class="order-table__result-value">104 140₽</div>
+      </div>
+      <div class="order-table__result-buttons">
+         @@include('../UI/Button/Button.html',{
+         text:'@@textButton1',
+         type: 'button',
+         class: 'button-border',
+         arrowButton: 'false'
+         })
+         @@include('../UI/Button/Button.html',{
+         text:'@@textButton2',
+         link: '@@linkButton2',
+         arrowButton: 'false'
+         })
+      </div>
+   </div>
+
+</div>

@@ -42,7 +42,6 @@ body {
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	scroll-behavior: smooth;
-	scrollbar-gutter: stable;
 }
 
 input,
@@ -97,9 +96,7 @@ h6 {
 	font-weight: inherit;
 }
 
-:root {
-	scrollbar-gutter: stable;
-}
+:root {}
 
 input[type="number"] {
 	-moz-appearance: textfield;

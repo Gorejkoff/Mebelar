@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 
 <head>
    @@include('html/1_head.html',{"title":"Mebelar"})
@@ -16,7 +16,15 @@
 
          @@include('html/Banner-Fade/Banner-Fade.html',{})
          @@include('html/About-Us/About-Us.html',{})
-         @@include('html/Banner-Video/Banner-Video.html',{})
+         @@include('html/Banner-Video/Banner-Video.html',{
+         title: 'Производство',
+         button: true,
+         list: true,
+         text:[
+         'Мы создаём мебель на собственном производстве, где сочетаются современное оборудование и ручная работа мастеров. Каждый этап — от подбора материалов до финальной отделки — проходит строгий контроль качества.',
+         'Благодаря этому наша мебель служит долгие годы, сохраняя эстетику и надежность.'
+         ]
+         })
          @@include('html/Ready-Solutions/Ready-Solutions.html',{})
          @@include('html/Advantages/Advantages.html',{})
          @@include('html/Portfolio/Portfolio.html',{})

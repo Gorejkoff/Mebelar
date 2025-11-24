@@ -1,16 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 
 <head>
    <title>"Mebelar Card Pablic"</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta name="viewport" content="width=device-width initial-scale=1.0">
 <meta name="description" content="Российский производитель офисной мебели">
-<!-- <link rel="preload" as="font" type="font/woff2" href="./fonts/Raleway-Regular.woff2" crossorigin=""> -->
 
-<link rel="stylesheet" href="css/fancybox.css?_v=20251121093643">
+<link rel="stylesheet" href="css/fancybox.css?_v=20251124153144">
 
-<link rel="stylesheet" href="css/style.css?_v=20251121093643">
+<link rel="stylesheet" href="css/style.css?_v=20251124153144">
 </head>
 
 
@@ -120,7 +119,7 @@
    </svg>
 </section>
 
-         <div class="material margin-section-bottom js-tabs-group">
+         <form name="material" class="material margin-section-bottom js-tabs-group">
    <div class="material__body js-tabs-body">
       <div class="material__container">
          <button type="button" class="material__button js-tabs-click">
@@ -1644,7 +1643,7 @@
    <svg class="contour__center" width="99" height="159" viewBox="0 0 99 159" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M99 59.6566L0 0V41.2035L62.4301 79.8792L0 118.808V159L99 100.102V59.6566Z" fill="white" />
    </svg>
-</div>
+</form>
 
       </div>
 
@@ -1659,23 +1658,23 @@
             <ol class="footer__list">
                <li><a class="link-text" href="#0">Каталог</a></li>
                <li><a class="link-text" href="#0">О компании</a></li>
-               <li><a class="link-text" href="#0">Производство</a></li>
-               <li><a class="link-text" href="#0">СТМ</a></li>
-               <li><a class="link-text" href="#0">Портфолио</a></li>
-               <li><a class="link-text" href="#0">Дилерам</a></li>
-               <li><a class="link-text" href="#0">Контакты</a></li>
+               <li><a class="link-text" href="production.html">Производство</a></li>
+               <li><a class="link-text" href="stm.html">СТМ</a></li>
+               <li><a class="link-text" href="portfolio.html">Портфолио</a></li>
+               <li><a class="link-text" href="partners.html">Дилерам</a></li>
+               <li><a class="link-text" href="contacts.html">Контакты</a></li>
             </ol>
          </div>
          <div>
             <div class="footer__title-section">Продукция</div>
             <ol class="footer__list">
-               <li><a class="link-text" href="#0">Мебель для персонала</a></li>
-               <li><a class="link-text" href="#0">Кабинеты руководителя</a></li>
-               <li><a class="link-text" href="#0">Зона ресепшен</a></li>
-               <li><a class="link-text" href="#0">Столы для переговоров</a></li>
-               <li><a class="link-text" href="#0">Мобильные складные столы</a></li>
-               <li><a class="link-text" href="#0">Тумбы и шкафы</a></li>
-               <li><a class="link-text" href="#0">Кресла и стулья</a></li>
+               <li><a class="link-text" href="catalog.html">Мебель для персонала</a></li>
+               <li><a class="link-text" href="catalog.html">Кабинеты руководителя</a></li>
+               <li><a class="link-text" href="catalog.html">Зона ресепшен</a></li>
+               <li><a class="link-text" href="catalog.html">Столы для переговоров</a></li>
+               <li><a class="link-text" href="catalog.html">Мобильные складные столы</a></li>
+               <li><a class="link-text" href="catalog.html">Тумбы и шкафы</a></li>
+               <li><a class="link-text" href="catalog.html">Кресла и стулья</a></li>
             </ol>
          </div>
          <div class="footer__contacts">
@@ -1735,14 +1734,15 @@
 
    </div>
 
-   <div id="technical_information" class="modal modal--connection js-modal-hidden">
-   <div class="modal__body">
-      <button class="modal__close js-modal-close" type="button">
-         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.94979 7.364L0.292968 13.0208C-0.0975555 13.4113 -0.0975559 14.0445 0.292968 14.435C0.683493 14.8256 1.31666 14.8256 1.70718 14.435L7.364 8.77821L13.0208 14.435C13.4113 14.8256 14.0445 14.8256 14.435 14.435C14.8256 14.0445 14.8256 13.4113 14.435 13.0208L8.77821 7.364L14.4351 1.70711C14.8256 1.31658 14.8256 0.683419 14.4351 0.292895C14.0446 -0.0976296 13.4114 -0.0976297 13.0209 0.292895L7.364 5.94979L1.70711 0.292893Z" fill="black" />
-         </svg>
-      </button>
-      <section class="card-product-info">
+   <div id="technical_information" class="modal modal__technical-information js-modal-hidden">
+   <div class="modal__container">
+      <div class="modal__body">
+         <button class="modal__close js-modal-close" type="button">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.94979 7.364L0.292968 13.0208C-0.0975555 13.4113 -0.0975559 14.0445 0.292968 14.435C0.683493 14.8256 1.31666 14.8256 1.70718 14.435L7.364 8.77821L13.0208 14.435C13.4113 14.8256 14.0445 14.8256 14.435 14.435C14.8256 14.0445 14.8256 13.4113 14.435 13.0208L8.77821 7.364L14.4351 1.70711C14.8256 1.31658 14.8256 0.683419 14.4351 0.292895C14.0446 -0.0976296 13.4114 -0.0976297 13.0209 0.292895L7.364 5.94979L1.70711 0.292893Z" fill="black" />
+            </svg>
+         </button>
+         <section class="card-product-info">
    <div class="card-product-info__container">
       <div class="card-product-info__body">
    <div class="card-product-info__image">
@@ -1779,6 +1779,7 @@
 </div>
    </div>
 </section>
+      </div>
    </div>
 </div>
    <div id="connection" class="modal modal--connection js-modal-hidden">
@@ -1872,13 +1873,13 @@
                <a href="production.html" class="header__link">Производство</a>
             </li>
             <li>
-               <a href="index.html" class="header__link">СТМ</a>
+               <a href="stm.html" class="header__link">СТМ</a>
             </li>
             <li>
                <a href="portfolio.html" class="header__link">Портфолио</a>
             </li>
             <li>
-               <a href="dealers.html" class="header__link">Дилерам</a>
+               <a href="partners.html" class="header__link">Дилерам</a>
             </li>
             <li>
                <a href="news.html" class="header__link">Новости</a>
@@ -1919,12 +1920,12 @@
 
    
 
-<script defer src='./js/fancybox.umd.js?_v=20251121093643'></script>
+<script defer src='./js/fancybox.umd.js?_v=20251124153144'></script>
 
 
-<script defer src='./js/swiper.js?_v=20251121093643'></script>
+<script defer src='./js/swiper.js?_v=20251124153144'></script>
 
-<script defer src='./js/app.js?_v=20251121093643'></script>
+<script defer src='./js/app.js?_v=20251124153144'></script>
 
 
 </body>

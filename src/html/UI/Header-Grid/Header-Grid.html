@@ -1,9 +1,19 @@
 <div class="header-grid @@if(context.class){@@class}">
-   @@include('../Name-Section/Name-Sectio.html',{
+   @@if(!context.removeName){@@include('../Name-Section/Name-Sectio.html',{
    nameSection: '@@nameSection'
-   })
-   <div class="header-grid__shell title-block">
+   })}
+   <div class="header-grid__shell title-block @@if(context.text2){flex}">
       <h2>@@title</h2>
+      @@if(context.text2){
+      <div>
+         <p class="header-grid__text">@@text2</p>
+         @@if(context.list2){
+         <ul class="header-grid__text-list">
+            @@for( var i = 0; i < context.list2.length; i++ ){ <li>`+context.list2[i]+`</li> }
+         </ul>
+         }
+      </div>
+      }
       @@if(context.button){ <div class="header-grid__subgrid">
          <div>}
             @@if(context.text){ <div class="header-grid__text">@@text</div> }
