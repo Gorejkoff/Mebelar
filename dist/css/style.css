@@ -1304,6 +1304,12 @@ body {
 
 .modal__technical-information {
   background-color: #ffffff;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.modal__technical-information .modal__close {
+  top: -35px;
 }
 
 .modal__body {
