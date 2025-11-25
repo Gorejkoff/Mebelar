@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   @@include('html/1_head.html',{"title":"Mebelar Partners"})
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/2_header.html',{})
+
+      <div class="main">
+
+         <div class="container padding-section-bottom">
+            @@include('html/UI/Bread-Crumbs/Bread-Crumbs.html',{
+            "list":[{"name": "Главная", "link": "index.html"}, {"name": "Партнерам", "link": "partners.html"}],
+            "border": true
+            })
+
+            @@include('html/UI/Page-Title/Page-Title.html',{
+            title:'Партнерам',
+            text: 'Мы — современная мебельная фабрика с полным циклом производства и высоким стандартом качества.Приглашаем к сотрудничеству дилеров, дизайнеров и архитекторов. Партнёрам предоставляем гибкие условия, стабильные поставки и маркетинговую поддержку.'
+            })
+         </div>
+         @@include('html/Stages/Stages.html',{})
+         @@include('html/Advantages/Advantages.html',{})
+         @@include('html/Contact/Contact.html',{image:'webp/img-26.webp'})
+
+      </div>
+
+      @@include('html/4_footer.html',{})
+
+   </div>
+   @@include('html/Modal/log-in.html',{})
+   @@include('html/Mobile-Menu/Mobile-Menu.html',{})
+   @@include('html/Modal/Search.html',{})
+
+   @@include('html/3_scripts.html',{
+   swiper: true,
+   })
+
+
+</body>
+
+</html>

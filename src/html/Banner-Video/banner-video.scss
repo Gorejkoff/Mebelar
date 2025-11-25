@@ -19,8 +19,21 @@
       object-fit: cover;
    }
 
+   &__play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+
+      &.hidden {
+         display: none;
+      }
+   }
+
    &__container {
       display: flex;
+      pointer-events: none;
    }
 
    &__content {

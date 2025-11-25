@@ -1,0 +1,12 @@
+<li>
+   <div class="stages__number"></div>
+   <div class="stages__content">
+      <div class="stages__content-title">@@title</div>
+      <div class="stages__content-text">@@text</div>
+   </div>
+   @@if(context.button){ @@include('../UI/Button/Button.html',{
+   text: 'Отправить запрос',
+   link: '#contact',
+   class: 'button-border'
+   }) }
+</li>

@@ -17,6 +17,7 @@ document.addEventListener('click', (event) => {
    if (event.target.closest('.js-modal-close')) { testModalStopClose(event) }
 })
 function openModal(event) {
+   event.preventDefault();
    let id = event.target.closest('.js-modal-open').dataset.modal_open;
    if (typeof id !== "undefined") { initOpenModal(id) };
 }

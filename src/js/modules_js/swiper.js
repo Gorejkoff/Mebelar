@@ -123,6 +123,21 @@ if (document.querySelector('.slider-wide__swiper')) {
    })
 }
 
+if (document.querySelector('.home__news-swiper')) {
+   const swiper = new Swiper('.home__news-swiper', {
+      spaceBetween: 16,
+      speed: 300,
+      slidesPerView: 1.8,
+      breakpoints: {
+         1024: {
+            spaceBetween: 20,
+            slidesPerView: 3
+         }
+      },
+   });
+}
+
+
 /* пример инициализации слайдера */
 // if (document.querySelector('.swiper')) {
 //    const swiper = new Swiper('.swiper', {

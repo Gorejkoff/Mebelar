@@ -52,6 +52,7 @@ window.addEventListener('resize', () => {
 // ** ======================= CLICK ======================  ** //
 document.documentElement.addEventListener("click", (event) => {
    if (event.target.closest('.js-open-mobile-menu')) { openHeaderMenu() }
+   if (event.target.closest('.banner-video__play')) { playVideo(event) }
 })
 
 // отключение кнопки в выборе материалов
@@ -95,7 +96,7 @@ function closeHeaderMenu() {
 }
 
 //  запуск видео
-if (document.querySelector('.banner-video video')) {
+if (document.querySelector('.autoplay video')) {
    let callback = function (entries, observer) {
       entries.forEach((entry) => {
          if (entry.isIntersecting) {
@@ -106,8 +107,20 @@ if (document.querySelector('.banner-video video')) {
       })
    };
    let observer = new IntersectionObserver(callback, { threshold: 0.2 });
-   let target = document.querySelectorAll('.banner-video video');
+   let target = document.querySelectorAll('.autoplay video');
    target.forEach(event => observer.observe(event));
+}
+
+function playVideo(event) {
+   const banner = event.target.closest('.banner-video');
+   const button = event.target.closest('.banner-video__play');
+   if (!banner) return;
+   const video = banner.querySelector('video');
+   if (!video) return;
+   console.log(video);
+   video.setAttribute('controls', '')
+   video.play();
+   button.classList.add('hidden');
 }
 
 

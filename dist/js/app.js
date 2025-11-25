@@ -52,6 +52,7 @@ window.addEventListener('resize', () => {
 // ** ======================= CLICK ======================  ** //
 document.documentElement.addEventListener("click", (event) => {
    if (event.target.closest('.js-open-mobile-menu')) { openHeaderMenu() }
+   if (event.target.closest('.banner-video__play')) { playVideo(event) }
 })
 
 // отключение кнопки в выборе материалов
@@ -95,7 +96,7 @@ function closeHeaderMenu() {
 }
 
 //  запуск видео
-if (document.querySelector('.banner-video video')) {
+if (document.querySelector('.autoplay video')) {
    let callback = function (entries, observer) {
       entries.forEach((entry) => {
          if (entry.isIntersecting) {
@@ -106,8 +107,20 @@ if (document.querySelector('.banner-video video')) {
       })
    };
    let observer = new IntersectionObserver(callback, { threshold: 0.2 });
-   let target = document.querySelectorAll('.banner-video video');
+   let target = document.querySelectorAll('.autoplay video');
    target.forEach(event => observer.observe(event));
+}
+
+function playVideo(event) {
+   const banner = event.target.closest('.banner-video');
+   const button = event.target.closest('.banner-video__play');
+   if (!banner) return;
+   const video = banner.querySelector('video');
+   if (!video) return;
+   console.log(video);
+   video.setAttribute('controls', '')
+   video.play();
+   button.classList.add('hidden');
 }
 
 
@@ -279,6 +292,7 @@ document.addEventListener('click', (event) => {
    if (event.target.closest('.js-modal-close')) { testModalStopClose(event) }
 })
 function openModal(event) {
+   event.preventDefault();
    let id = event.target.closest('.js-modal-open').dataset.modal_open;
    if (typeof id !== "undefined") { initOpenModal(id) };
 }
@@ -438,6 +452,21 @@ if (document.querySelector('.slider-wide__swiper')) {
       });
    })
 }
+
+if (document.querySelector('.home__news-swiper')) {
+   const swiper = new Swiper('.home__news-swiper', {
+      spaceBetween: 16,
+      speed: 300,
+      slidesPerView: 1.8,
+      breakpoints: {
+         1024: {
+            spaceBetween: 20,
+            slidesPerView: 3
+         }
+      },
+   });
+}
+
 
 /* пример инициализации слайдера */
 // if (document.querySelector('.swiper')) {
@@ -653,5 +682,43 @@ if (document.querySelector('.material__body')) {
    tabs.openTabs(document.querySelector('.material__body'))
 }
 
+
+
+
+
+
+class TabsSwitching {
+   constructor(button_name, tab_name, execute) {
+      this.name_button = button_name;
+      this.list_buttons = document.querySelectorAll(button_name);
+      this.list_tabs = document.querySelectorAll(tab_name);
+      this.execute = execute;
+   }
+   init = () => {
+      document.body.addEventListener('click', (event) => {
+         if (event.target.closest(this.name_button)) {
+            actionTabsSwitching(event, event.target.closest(this.name_button), this.list_buttons, this.list_tabs, this.execute)
+         }
+      })
+   }
+}
+
+function actionTabsSwitching(event, target_button, list_buttons, list_tabs, execute) {
+   let number = target_button.dataset.button_ts;
+   if (!number) return;
+   list_buttons.forEach((e) => { e.classList.toggle('active', e.dataset.button_ts == number) });
+   if (list_tabs.length > 0) { list_tabs.forEach((e) => { e.classList.toggle('active', e.dataset.tab_ts == number) }) }
+   if (execute) { this.execute(event) };
+}
+
+function addTabsSwitching(button_name, tab_name, fn_name) {
+   if (document.querySelector(button_name) && document.querySelector(tab_name)) {
+      let tab = new TabsSwitching(button_name, tab_name, fn_name);
+      tab.init();
+   }
+}
+
+addTabsSwitching('.modal__tab-batton', '.modal__tab')
+// addTabsSwitching('.button_name', '.tab_name', '.fn_name')
 
 

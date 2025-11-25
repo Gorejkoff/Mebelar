@@ -1,0 +1,46 @@
+<div id="login" class="modal modal--login js-modal-hidden">
+   <div class="modal__body">
+      <button class="modal__close js-modal-close" type="button">
+         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.94979 7.364L0.292968 13.0208C-0.0975555 13.4113 -0.0975559 14.0445 0.292968 14.435C0.683493 14.8256 1.31666 14.8256 1.70718 14.435L7.364 8.77821L13.0208 14.435C13.4113 14.8256 14.0445 14.8256 14.435 14.435C14.8256 14.0445 14.8256 13.4113 14.435 13.0208L8.77821 7.364L14.4351 1.70711C14.8256 1.31658 14.8256 0.683419 14.4351 0.292895C14.0446 -0.0976296 13.4114 -0.0976297 13.0209 0.292895L7.364 5.94979L1.70711 0.292893Z" fill="black" />
+         </svg>
+      </button>
+      <div class="modal__high">
+         <div class="modal__content">
+            <img class="modal__counter" src="@img/svg/contour-3.svg" alt="фон" aria-hidden="true">
+            <div class="modal__content-shell">
+               <div class="modal__content-logo">
+                  <img src="@img/png/logo-1.png" alt="Mebelar">
+               </div>
+               <div class="modal__content-title">Вход для дилеров</div>
+               <div class="modal__content-text">Добро пожаловать на новый портал для дилеров Mebelar</div>
+               <form class="modal__content-form form--dark">
+                  <label class="input">
+                     <input type="text" placeholder="Логин">
+                  </label>
+                  <label class="input">
+                     <input type="text" placeholder="Пароль">
+                  </label>
+                  <label class="input">
+                     <input type="text" placeholder="Сколько будет 7+9?">
+                  </label>
+                  <div class="modal__button">
+                     @@include('../UI/Button/Button.html',{
+                     text: 'Войти',
+                     link: 'home.html'
+                     })
+                  </div>
+                  <div class="modal__link">
+                     <button class="modal__link-item js-modal-open" data-modal_open="recovery">Забыли пароль?</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+         <div class="modal__image">
+            <div class="modal__image-item">
+               <img src="@img/webp/img-39.webp" alt="декорированная комната">
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

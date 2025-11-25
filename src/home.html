@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+   @@include('html/1_head.html',{"title":"Mebelar Home"})
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/2_header.html',{})
+
+      <div class="main">
+
+         @@include('html/Home/Home.html',{})
+
+      </div>
+
+      @@include('html/4_footer.html',{})
+
+   </div>
+
+   @@include('html/Modal/log-in.html',{})
+   @@include('html/Modal/recovery.html',{})
+   @@include('html/Mobile-Menu/Mobile-Menu.html',{})
+   @@include('html/Modal/Search.html',{})
+
+   @@include('html/3_scripts.html',{
+   swiper: true,
+   })
+
+
+</body>
+
+</html>

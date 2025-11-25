@@ -1,0 +1,220 @@
+@use '../../scss/assets/variablesSCSS.scss' as *;
+
+.home {
+   margin-bottom: 36px;
+   overflow: hidden;
+   --calc-width-content: 100%;
+   --calc-height-card: calc((100vw - 16px) / 2 * 1.17);
+
+   @media (min-width:1024px) {
+      --calc-width-content: calc((100vw - (var(--padding-container) * 2)) / 2 - 10px);
+      --calc-height-card: calc((var(--calc-width-content) - 40px) / 3 * 1.17);
+   }
+
+   @media (min-width:$max-width-container) {
+      --calc-width-content: calc((var(--max-width-container) - (var(--padding-container) * 2)) / 2 - 10px);
+      --calc-height-card: calc((var(--calc-width-content) - 40px) / 3 * 1.17);
+   }
+
+   &__container {
+      overflow: visible;
+   }
+
+   &__body {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @media (min-width:1024px) {
+         flex-direction: row;
+      }
+   }
+
+   &__baner {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vw;
+      width: 100vw;
+      margin-left: calc(var(--padding-container) * -1);
+
+      @media (min-width:1024px) {
+         padding: 40px;
+         width: calc(50vw - 10px);
+         min-height: auto;
+         height: calc((50vw - 10px) * 0.83);
+         margin-left: calc((100vw - 100%) / 2 * -1);
+      }
+
+      img {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         z-index: -1;
+         transform: translate(-50%, -50%);
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__banner-inner {
+      padding-left: var(--padding-container);
+      padding-right: var(--padding-container);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 515px;
+
+      @media (min-width:1024px) {
+         gap: 30px;
+      }
+   }
+
+   &__title {
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 127%;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+
+      @media (min-width:1024px) {
+         font-size: 60px;
+      }
+   }
+
+   &__text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 144%;
+      color: #ffffff;
+   }
+
+   &__content {
+      overflow: visible;
+      flex: 0 0 calc(50% - 10px);
+   }
+
+   &__block-title {
+      margin-top: 36px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 20px;
+   }
+
+   &__news-swiper {
+      overflow: visible;
+
+      @media (min-width:1024px) {
+         width: var(--calc-width-content);
+      }
+   }
+
+   &__news-card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: stretch;
+      min-height: var(--calc-height-card);
+
+      ._pc &:hover {
+         .home__news-text {
+            text-decoration: underline;
+         }
+
+         img {
+            transform: translate(-50%, -50%) scale(1.1);
+         }
+      }
+
+      img {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         transition: transform 0.3s;
+         z-index: -1;
+      }
+   }
+
+   &__news-text {
+      padding: 20px;
+      display: flex;
+      align-items: flex-end;
+      font-size: 14px;
+      color: #ffffff;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+   }
+
+   &__important-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+
+      @media (min-width:1024px) {
+         grid-template-columns: repeat(3, 1fr);
+      }
+   }
+
+   &__important-card {
+      padding: 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background-color: #F0F0F0;
+      transition: background-color 0.3s;
+      min-height: 170px;
+
+      @media (min-width:1024px) {
+         min-height: var(--calc-height-card);
+      }
+
+      svg {
+         path {
+            fill: #004A5E;
+            transition: fill 0.3s;
+         }
+      }
+
+      &:hover {
+         background-color: #004A5E;
+
+         svg path {
+            fill: #ffffff;
+         }
+
+         .home__important-card-text {
+            color: #ffffff;
+            text-decoration-color: #ffffff;
+         }
+      }
+   }
+
+   &__important-card-arrow {
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: flex-end;
+   }
+
+   &__important-card-icon {
+      svg {
+         width: 40px;
+         height: auto;
+      }
+   }
+
+   &__important-card-text {
+      font-weight: 500;
+      font-size: 14px;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      transition: color 0.3s, text-decoration-color 0.3s;
+   }
+}

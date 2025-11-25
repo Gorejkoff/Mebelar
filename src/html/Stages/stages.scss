@@ -1,0 +1,73 @@
+.stages {
+   background-color: #F0F0F0;
+
+   &__container {}
+
+   &__title {
+      margin-bottom: 30px;
+
+      @media (min-width:768px) {
+         margin-bottom: 40px;
+      }
+   }
+
+   &__list {
+      counter-reset: item;
+
+      li {
+         padding-top: 16px;
+         padding-bottom: 16px;
+         display: flex;
+         flex-wrap: wrap;
+         align-items: center;
+         gap: 12px;
+         border-bottom: 1px solid #000000;
+         counter-increment: item;
+
+         @media (min-width:768px) {
+            flex-wrap: nowrap;
+         }
+
+         &:first-child {
+            border-top: 1px solid #000000;
+         }
+      }
+   }
+
+   &__number {
+      align-self: flex-start;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+
+      @media (min-width:1024px) {
+         flex: 0 0 16%;
+      }
+
+      &::before {
+         content: '0' counter(item);
+      }
+   }
+
+   &__content {
+      padding-bottom: 16px;
+      flex: 1 1 calc(100% - 30px);
+
+      @media (min-width:768px) {
+         padding-bottom: 0;
+      }
+   }
+
+   &__content-title {
+      margin-bottom: 4px;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+   }
+
+   &__content-text {
+      font-size: 14px;
+   }
+}
