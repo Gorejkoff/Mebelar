@@ -214,8 +214,8 @@ body {
   font-weight: 400;
   color: var(--color-black);
   --padding-container: 16px;
-  --container-width: 1200px;
-  --max-width-container: 1248px;
+  --container-width: 1600px;
+  --max-width-container: 1648px;
 }
 
 .wrapper {
@@ -5180,7 +5180,7 @@ body {
   }
 }
 
-@media (min-width: 1248px) {
+@media (min-width: 1648px) {
   .home {
     --calc-width-content: calc((var(--max-width-container) - (var(--padding-container) * 2)) / 2 - 10px);
     --calc-height-card: calc((var(--calc-width-content) - 40px) / 3 * 1.17);
