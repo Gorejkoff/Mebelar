@@ -7,10 +7,17 @@
       gap: 100px;
    }
 
-   &__block {
+   &__grid {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+   }
+
+   &__block-title {
+      margin-bottom: 16px;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: -0.01em;
    }
 
    &__card {
@@ -18,6 +25,7 @@
       display: flex;
       flex-direction: column;
       width: 129px;
+      border-bottom: 1px solid #004A5E;
    }
 
    &__card-image {

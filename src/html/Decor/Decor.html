@@ -2,11 +2,17 @@
    <div class="decor__container">
       <h2 class="title-block title-block--margin">Отделки</h2>
       <div class="decor__body">
-         <div class="decor__block">
-            @@loop('./Decor-Card.html','json/lists/decor.json')
+         <div>
+            <div class="decor__block-title">Столешницы ЛДСП</div>
+            <div class="decor__grid">
+               @@loop('./Decor-Card.html','json/lists/decor.json')
+            </div>
          </div>
-         <div class="decor__block">
-            @@loop('./Decor-Card.html','json/lists/decor.json')
+         <div>
+            <div class="decor__block-title">Каркасы ЛДСП</div>
+            <div class="decor__grid">
+               @@loop('./Decor-Card.html','json/lists/decor.json')
+            </div>
          </div>
       </div>
    </div>

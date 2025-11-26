@@ -1183,7 +1183,8 @@ body {
   overflow: hidden;
 }
 
-.experience__image:hover .experience__image-cover {
+.experience__image.active .experience__image-cover,
+._pc .experience__image:hover .experience__image-cover {
   -webkit-transform: translateX(-72%);
       -ms-transform: translateX(-72%);
           transform: translateX(-72%);
@@ -1594,13 +1595,20 @@ body {
   gap: 100px;
 }
 
-.decor__block {
+.decor__grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 8px;
+}
+
+.decor__block-title {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.01em;
 }
 
 .decor__card {
@@ -1613,6 +1621,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 129px;
+  border-bottom: 1px solid #004A5E;
 }
 
 .decor__card-image {

@@ -53,6 +53,7 @@ window.addEventListener('resize', () => {
 document.documentElement.addEventListener("click", (event) => {
    if (event.target.closest('.js-open-mobile-menu')) { openHeaderMenu() }
    if (event.target.closest('.banner-video__play')) { playVideo(event) }
+   if (!isPC && event.target.closest('.experience__image')) { event.target.closest('.experience__image').classList.toggle('active') }
 })
 
 // отключение кнопки в выборе материалов

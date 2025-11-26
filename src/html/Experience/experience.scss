@@ -6,7 +6,8 @@
       position: relative;
       overflow: hidden;
 
-      &:hover {
+      &.active,
+      ._pc &:hover {
          .experience__image-cover {
             transform: translateX(-72%);
          }
