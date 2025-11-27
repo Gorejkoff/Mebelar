@@ -3364,6 +3364,7 @@ body {
 }
 
 .home__swiper {
+  position: relative;
   min-height: 100vw;
   width: 100vw;
   margin-left: calc(var(--padding-container) * -1);
@@ -3372,6 +3373,14 @@ body {
 .home__swiper .swiper-slide,
 .home__swiper .swiper-wrapper {
   min-height: 100%;
+}
+
+.home__swiper-buttons {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
 }
 
 .home__baner {
