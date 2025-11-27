@@ -7,7 +7,7 @@
    <meta name="viewport" content="width=device-width initial-scale=1.0">
    <meta name="description" content="Российский производитель офисной мебели">
 
-   <link rel="stylesheet" href="css/style.css?_v=20251126154802">
+   <link rel="stylesheet" href="css/style.css?_v=20251127142248">
 </head>
 
 
@@ -72,7 +72,7 @@
                         <div class="contacts__grid">
                            <div>
                               <div class="contacts__cell-title">Адрес</div>
-                              <button class="contacts__cell-button" type="button" data-map="37.61855047980253,55.7602327096566">
+                              <button class="contacts__cell-button" type="button" data-coordinates="37.61855047980253,55.7602327096566" data-marker="г. Москва, ул. Дубининская, д.57 стр.4">
                                  <span>г. Москва, ул. Дубининская, д.57 стр.4</span>
                                  <span class="contacts__cell-arrow">
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +106,7 @@
                         <div class="contacts__grid">
                            <div>
                               <div class="contacts__cell-title">Адрес</div>
-                              <button class="contacts__cell-button" type="button" data-map="37.63577597309541,55.71973092218984">
+                              <button class="contacts__cell-button" type="button" data-coordinates="37.63577597309541,55.71973092218984" data-marker="Тест смены текста">
                                  <span>г. Москва, ул. Дубининская, д.57 стр.4</span>
                                  <span class="contacts__cell-arrow">
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -142,6 +142,12 @@
                </div>
             </div>
          </section>
+         <template id="marker">
+            <div class="map-marker">
+               Mebelar
+               <div class="marker-address"></div>
+            </div>
+         </template>
 
          <section id="contact" class="contact padding-section">
             <div class="container">
@@ -208,6 +214,7 @@
                </div>
             </div>
          </section>
+
 
       </div>
 
@@ -427,9 +434,9 @@
 
 
 
-   <script defer src='./js/swiper.js?_v=20251126154802'></script>
+   <script defer src='./js/swiper.js?_v=20251127142248'></script>
 
-   <script defer src='./js/app.js?_v=20251126154802'></script>
+   <script defer src='./js/app.js?_v=20251127142248'></script>
 
 </body>
 

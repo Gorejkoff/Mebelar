@@ -136,7 +136,14 @@ if (document.querySelector('.home__news-swiper')) {
       },
    });
 }
-
+if (document.querySelector('.home__swiper')) {
+   const swiper = new Swiper('.home__swiper', {
+      spaceBetween: 16,
+      speed: 300,
+      slidesPerView: 1,
+      grabCursor: true,
+   });
+}
 
 /* пример инициализации слайдера */
 // if (document.querySelector('.swiper')) {
