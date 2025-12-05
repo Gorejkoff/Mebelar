@@ -5,29 +5,6 @@
             @@include('../UI/Bread-Crumbs/Bread-Crumbs.html',{"list":[{"name": "Главная", "link": "index.html"}, {"name": "Каталог", "link": "catalog.html"}, {"name": "Офисная мебель Mono", "link": "card.html"}]})
             <div class="card-production__content-shell">
                <h1 class="title-block">Офисная мебель Mono</h1>
-               <div class="card-production__swiper-body" data-da=".card-production__swiper,1,992,min">
-                  <div class="swiper">
-                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                           <div class="card-production__image">
-                              <a href="@img/webp/img-16.webp" data-fancybox="gallery-1">
-                                 <img src="@img/webp/img-16.webp" alt="образец медели">
-                              </a>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="card-production__image">
-                              <a href="@img/webp/img-17.webp" data-fancybox="gallery-1">
-                                 <img src="@img/webp/img-17.webp" alt="образец медели">
-                              </a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="card-production__swiper-buttons">
-                     @@include('../UI/Button-Swiper/Button-Swiper.html',{})
-                  </div>
-               </div>
                <div class="card-production__text">
                   <p>Коллекция Mono — это решение для тех, кто ценит простоту и монохромную эстетику. В ней представлены столы в единой отделке, которые идеально подходят для современных интерьеров.</p>
                   <p>Простота исполнения и доступная цена делают коллекцию практичным выбором для тех, кто ищет функциональность без компромиссов в стиле. Mono — это чистота линий и монохромная элегантность.</p>
@@ -40,7 +17,31 @@
                })
             </div>
          </div>
-         <div class="card-production__swiper"></div>
+         <div class="card-production__swiper">
+            <div class="card-production__swiper-body" data-da=".card-production__content-shell,1,992,max">
+               <div class="swiper">
+                  <div class="swiper-wrapper">
+                     <div class="swiper-slide">
+                        <div class="card-production__image">
+                           <a href="@img/webp/img-16.webp" data-fancybox="gallery-1">
+                              <img src="@img/webp/img-16.webp" alt="образец медели">
+                           </a>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="card-production__image">
+                           <a href="@img/webp/img-17.webp" data-fancybox="gallery-1">
+                              <img src="@img/webp/img-17.webp" alt="образец медели">
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="card-production__swiper-buttons">
+                  @@include('../UI/Button-Swiper/Button-Swiper.html',{})
+               </div>
+            </div>
+         </div>
       </div>
    </div>
    <svg class="contour__top-left" width="99" height="159" viewBox="0 0 99 159" fill="none" xmlns="http://www.w3.org/2000/svg">
